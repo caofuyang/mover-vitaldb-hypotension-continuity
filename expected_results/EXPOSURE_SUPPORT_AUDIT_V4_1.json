@@ -1,0 +1,109 @@
+{
+  "purpose": "Exposure support for the locked one-degree-of-freedom duration-pattern contrast",
+  "note": "Support describes the exposure only. The contrast itself is model-based.",
+  "parent_cohort": {
+    "overall": {
+      "cases": 3138,
+      "cases_with_any_hypotension": 2875,
+      "total_low_minutes_gte_20": 1079,
+      "excess5_minutes_gte_15": 381,
+      "longest_episode_gte_20": 228,
+      "single_episode_of_20_minutes_or_more": 7,
+      "exactly_four_five_minute_episodes": 0,
+      "total_15_to_25_minutes_with_zero_excess": 151,
+      "excess5_minutes_quantiles_50_75_90_95": [
+        0.0,
+        5.0,
+        17.0,
+        31.0
+      ]
+    },
+    "MOVER": {
+      "cases": 1178,
+      "cases_with_any_hypotension": 1097,
+      "total_low_minutes_gte_20": 539,
+      "excess5_minutes_gte_15": 220,
+      "longest_episode_gte_20": 140,
+      "single_episode_of_20_minutes_or_more": 4,
+      "exactly_four_five_minute_episodes": 0,
+      "total_15_to_25_minutes_with_zero_excess": 82,
+      "excess5_minutes_quantiles_50_75_90_95": [
+        0.0,
+        9.0,
+        28.299999999999955,
+        48.0
+      ]
+    },
+    "VitalDB": {
+      "cases": 1960,
+      "cases_with_any_hypotension": 1778,
+      "total_low_minutes_gte_20": 540,
+      "excess5_minutes_gte_15": 161,
+      "longest_episode_gte_20": 88,
+      "single_episode_of_20_minutes_or_more": 3,
+      "exactly_four_five_minute_episodes": 0,
+      "total_15_to_25_minutes_with_zero_excess": 69,
+      "excess5_minutes_quantiles_50_75_90_95": [
+        0.0,
+        4.0,
+        12.0,
+        21.0
+      ]
+    }
+  },
+  "outcome_observed_cohort": {
+    "overall": {
+      "cases": 2958,
+      "cases_with_any_hypotension": 2719,
+      "total_low_minutes_gte_20": 1022,
+      "excess5_minutes_gte_15": 361,
+      "longest_episode_gte_20": 214,
+      "single_episode_of_20_minutes_or_more": 6,
+      "exactly_four_five_minute_episodes": 0,
+      "total_15_to_25_minutes_with_zero_excess": 143,
+      "excess5_minutes_quantiles_50_75_90_95": [
+        0.0,
+        5.0,
+        17.300000000000182,
+        31.0
+      ]
+    },
+    "MOVER": {
+      "cases": 1137,
+      "cases_with_any_hypotension": 1061,
+      "total_low_minutes_gte_20": 522,
+      "excess5_minutes_gte_15": 214,
+      "longest_episode_gte_20": 136,
+      "single_episode_of_20_minutes_or_more": 3,
+      "exactly_four_five_minute_episodes": 0,
+      "total_15_to_25_minutes_with_zero_excess": 79,
+      "excess5_minutes_quantiles_50_75_90_95": [
+        0.0,
+        9.0,
+        29.0,
+        48.0
+      ]
+    },
+    "VitalDB": {
+      "cases": 1821,
+      "cases_with_any_hypotension": 1658,
+      "total_low_minutes_gte_20": 500,
+      "excess5_minutes_gte_15": 147,
+      "longest_episode_gte_20": 78,
+      "single_episode_of_20_minutes_or_more": 3,
+      "exactly_four_five_minute_episodes": 0,
+      "total_15_to_25_minutes_with_zero_excess": 64,
+      "excess5_minutes_quantiles_50_75_90_95": [
+        0.0,
+        4.0,
+        12.0,
+        21.0
+      ]
+    }
+  },
+  "correlation_total_duration_and_pattern_term": {
+    "pooled": 0.8802074789756332,
+    "MOVER": 0.8839648306501087,
+    "VitalDB": 0.8653399996853108
+  }
+}

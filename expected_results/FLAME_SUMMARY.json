@@ -1,0 +1,66 @@
+{
+  "package": "flameRisk",
+  "repository": "https://github.com/xinkai-zhou/flameRisk",
+  "commit": "85a6d1b81dcbdd1f45b488d13567cbc5577649bc",
+  "role": "prespecified supportive analysis (contract v4.1, flexible_flame_analysis)",
+  "cohort": {
+    "n": 2958,
+    "events": 200
+  },
+  "covariate_profile_for_contrast": "pooled typical profile (median continuous, modal categorical), mean depth fixed at 5 mmHg",
+  "runs": {
+    "k=4": {
+      "status": "failed",
+      "error": "bandchol: not positive definite"
+    },
+    "k=5": {
+      "status": "ok",
+      "edf": 1.000036,
+      "ref_df": 1.000072,
+      "chi_sq": 1.993658,
+      "p_smooth": 0.1579681,
+      "contrast_response_scale": {
+        "one_20_minute_episode_risk": 0.02410061,
+        "four_5_minute_episode_risk": 0.02410074,
+        "risk_difference": -1.373234e-07,
+        "risk_difference_95ci": [
+          -1.067818e-05,
+          1.00292e-05
+        ],
+        "p": 0.98
+      },
+      "contrast_link_scale": {
+        "estimate": 1.245295e-07,
+        "se": 0.0002105943,
+        "ci95": [
+          -0.0004126402,
+          0.0004128893
+        ],
+        "p": 0.9995282
+      }
+    },
+    "k=6": {
+      "status": "ok",
+      "edf": 1.000192,
+      "ref_df": 1.000384,
+      "chi_sq": 1.993455,
+      "p_smooth": 0.1580196,
+      "contrast_response_scale": {
+        "one_20_minute_episode_risk": 0.02410036,
+        "four_5_minute_episode_risk": 0.0241004,
+        "p": 0.998
+      },
+      "contrast_link_scale": {
+        "estimate": 9.95648e-07,
+        "se": 0.0005413776,
+        "ci95": [
+          -0.001060105,
+          0.001062096
+        ],
+        "p": 0.9985326
+      }
+    }
+  },
+  "interpretation": "The estimated accumulation function has one effective degree of freedom, so the flexible model collapses to a linear duration effect: risk depends only on total hypotensive minutes and the 1x20 versus 4x5 contrast is null by construction.",
+  "covariate_independence": "Under the linear functional specification the log-odds contrast between the two scenarios is sum_j h(d_j^A) - sum_j h(d_j^B), which does not involve the covariates. The log-odds contrast is therefore identical for every patient, and only the illustrative absolute risks depend on the profile at which they are evaluated."
+}

@@ -1,0 +1,201 @@
+{
+  "purpose": "Descriptive and postoperative-creatinine observation audit; no new association model",
+  "parent_rows": 3138,
+  "outcome_observed_rows": 2958,
+  "outcome_missing_rows": 180,
+  "maximum_absolute_smd": 0.7662686136291169,
+  "variables_with_absolute_smd_gte_0_2": [
+    {
+      "group": "Overall",
+      "variable": "asa",
+      "level": "continuous",
+      "standardized_mean_difference": 0.25296631115078194
+    },
+    {
+      "group": "Overall",
+      "variable": "baseline_creatinine",
+      "level": "continuous",
+      "standardized_mean_difference": 0.26792001739527915
+    },
+    {
+      "group": "Overall",
+      "variable": "anesthesia_minutes",
+      "level": "continuous",
+      "standardized_mean_difference": 0.392676427431773
+    },
+    {
+      "group": "Overall",
+      "variable": "map_coverage",
+      "level": "continuous",
+      "standardized_mean_difference": 0.2442798622604442
+    },
+    {
+      "group": "Overall",
+      "variable": "sex",
+      "level": "Female",
+      "standardized_mean_difference": -0.2846084356488916
+    },
+    {
+      "group": "Overall",
+      "variable": "sex",
+      "level": "Male",
+      "standardized_mean_difference": 0.2846084356488915
+    },
+    {
+      "group": "Overall",
+      "variable": "surgical_category",
+      "level": "genitourinary_gynecologic",
+      "standardized_mean_difference": -0.5814058543100727
+    },
+    {
+      "group": "Overall",
+      "variable": "surgical_category",
+      "level": "thoracic",
+      "standardized_mean_difference": 0.298246459373014
+    },
+    {
+      "group": "Overall",
+      "variable": "icu_flag",
+      "level": "No",
+      "standardized_mean_difference": -0.6919576788493907
+    },
+    {
+      "group": "Overall",
+      "variable": "icu_flag",
+      "level": "Yes",
+      "standardized_mean_difference": 0.6919576788493907
+    },
+    {
+      "group": "MOVER",
+      "variable": "age",
+      "level": "continuous",
+      "standardized_mean_difference": -0.26667508963327974
+    },
+    {
+      "group": "MOVER",
+      "variable": "baseline_creatinine",
+      "level": "continuous",
+      "standardized_mean_difference": 0.2437982533452806
+    },
+    {
+      "group": "MOVER",
+      "variable": "anesthesia_minutes",
+      "level": "continuous",
+      "standardized_mean_difference": 0.35702408795590856
+    },
+    {
+      "group": "MOVER",
+      "variable": "sex",
+      "level": "Female",
+      "standardized_mean_difference": -0.285737789758351
+    },
+    {
+      "group": "MOVER",
+      "variable": "sex",
+      "level": "Male",
+      "standardized_mean_difference": 0.285737789758351
+    },
+    {
+      "group": "MOVER",
+      "variable": "surgical_category",
+      "level": "abdominal",
+      "standardized_mean_difference": 0.29809851763418177
+    },
+    {
+      "group": "MOVER",
+      "variable": "surgical_category",
+      "level": "superficial_other",
+      "standardized_mean_difference": 0.29562754671520447
+    },
+    {
+      "group": "MOVER",
+      "variable": "surgical_category",
+      "level": "thoracic",
+      "standardized_mean_difference": -0.20410130958283396
+    },
+    {
+      "group": "MOVER",
+      "variable": "icu_flag",
+      "level": "No",
+      "standardized_mean_difference": -0.7662686136291169
+    },
+    {
+      "group": "MOVER",
+      "variable": "icu_flag",
+      "level": "Yes",
+      "standardized_mean_difference": 0.7662686136291169
+    },
+    {
+      "group": "VitalDB",
+      "variable": "baseline_creatinine",
+      "level": "continuous",
+      "standardized_mean_difference": 0.24709565865439817
+    },
+    {
+      "group": "VitalDB",
+      "variable": "anesthesia_minutes",
+      "level": "continuous",
+      "standardized_mean_difference": 0.33049714103328887
+    },
+    {
+      "group": "VitalDB",
+      "variable": "map_coverage",
+      "level": "continuous",
+      "standardized_mean_difference": 0.3629591750844008
+    },
+    {
+      "group": "VitalDB",
+      "variable": "sex",
+      "level": "Female",
+      "standardized_mean_difference": -0.25439659001691245
+    },
+    {
+      "group": "VitalDB",
+      "variable": "sex",
+      "level": "Male",
+      "standardized_mean_difference": 0.25439659001691234
+    },
+    {
+      "group": "VitalDB",
+      "variable": "surgical_category",
+      "level": "genitourinary_gynecologic",
+      "standardized_mean_difference": -0.7124630919383178
+    },
+    {
+      "group": "VitalDB",
+      "variable": "surgical_category",
+      "level": "superficial_other",
+      "standardized_mean_difference": -0.32725922617347836
+    },
+    {
+      "group": "VitalDB",
+      "variable": "surgical_category",
+      "level": "thoracic",
+      "standardized_mean_difference": 0.6019020358472852
+    },
+    {
+      "group": "VitalDB",
+      "variable": "diabetes",
+      "level": "False",
+      "standardized_mean_difference": -0.20045443814556585
+    },
+    {
+      "group": "VitalDB",
+      "variable": "diabetes",
+      "level": "True",
+      "standardized_mean_difference": 0.20045443814556574
+    },
+    {
+      "group": "VitalDB",
+      "variable": "icu_flag",
+      "level": "No",
+      "standardized_mean_difference": -0.5140788881261811
+    },
+    {
+      "group": "VitalDB",
+      "variable": "icu_flag",
+      "level": "Yes",
+      "standardized_mean_difference": 0.5140788881261811
+    }
+  ]
+}

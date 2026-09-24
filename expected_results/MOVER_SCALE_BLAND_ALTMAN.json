@@ -1,0 +1,20 @@
+{
+  "full": {
+    "bias_mmhg": -3.7,
+    "sd_mmhg": 16.81,
+    "lower_limit": -36.65,
+    "upper_limit": 29.25,
+    "pairs": 241132,
+    "pct_within_5": 37.5,
+    "pct_within_10": 63.3,
+    "pct_within_15": 79.1,
+    "pct_abs_gt_15": 20.9,
+    "mean_invasive": 78.98,
+    "mean_noninvasive": 82.68
+  },
+  "both_below_65": {
+    "n": 12123,
+    "bias_mmhg": -3.95,
+    "sd_mmhg": 9.75
+  }
+}
