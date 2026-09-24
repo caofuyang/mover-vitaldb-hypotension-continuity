@@ -1,0 +1,82 @@
+{
+  "self_check_48h": {
+    "archived_events": 200,
+    "recomputed_events": 200,
+    "match": true,
+    "by_center": {
+      "MOVER": {
+        "archived": 132.0,
+        "recomputed": 132.0
+      },
+      "VitalDB": {
+        "archived": 68.0,
+        "recomputed": 68.0
+      }
+    }
+  },
+  "seven_day_ratio_component": {
+    "description": "7-day postoperative creatinine outcome, ratio criterion only (peak/baseline >= 1.5); window is capped by the next operation in MOVER only",
+    "observed_n": 2976,
+    "events_ratio_only": 160,
+    "events_full_7d": 259,
+    "by_center": {
+      "MOVER": {
+        "observed": 1143,
+        "events_ratio_only": 101,
+        "events_full_7d": 169
+      },
+      "VitalDB": {
+        "observed": 1833,
+        "events_ratio_only": 59,
+        "events_full_7d": 90
+      }
+    },
+    "refit": {
+      "full_criterion": {
+        "n": 2976,
+        "events": 259,
+        "scenario_odds_ratio": 1.0771904867126547,
+        "scenario_odds_ratio_95ci": [
+          0.8873578061524695,
+          1.3076341207786382
+        ],
+        "wald_p": 0.4522048822195103
+      },
+      "ratio_only": {
+        "n": 2976,
+        "events": 160,
+        "scenario_odds_ratio": 0.9932468283485719,
+        "scenario_odds_ratio_95ci": [
+          0.7974508317239143,
+          1.2371160989221308
+        ],
+        "wald_p": 0.9517663136996216
+      }
+    }
+  },
+  "next_surgery_censoring": {
+    "description": "exclude operations whose next operation started before the end of the 48-hour outcome window",
+    "mover_with_next_operation_within_48h": 141,
+    "vitaldb_with_next_operation_within_48h": 61,
+    "note": "MOVER already caps the outcome window at the next operation, so the counts above describe how many operations the sensitivity analysis removes rather than a defect.",
+    "refit": {
+      "n": 2778,
+      "events": 176,
+      "excluded_operations": 202,
+      "scenario_odds_ratio": 1.0948996092711598,
+      "scenario_odds_ratio_95ci": [
+        0.8777222879835515,
+        1.3658137326513966
+      ],
+      "wald_p": 0.4215509511138926
+    }
+  },
+  "primary_48h_outcome_by_criterion": {
+    "events_total": 200,
+    "ratio_criterion": 114,
+    "absolute_only": 86,
+    "ratio_only": 0,
+    "both": 114,
+    "note": "absolute_only meets the 0.3 mg/dl criterion without reaching 1.5x baseline"
+  }
+}

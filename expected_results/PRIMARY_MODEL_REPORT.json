@@ -1,0 +1,242 @@
+{
+  "status": "completed",
+  "analysis_contract": "v4 prespecified one-degree-of-freedom duration-pattern model",
+  "analysis_lock": {
+    "contract_sha256": "fefbbb10d9e7f92d32ee77764b81475f555056fd621031737010bb5e4a7d3c59",
+    "combined_features_sha256": "0bd96f2fe98c02f74230f52f010cee2b51102a6532c2d1f53b19e2d53e46996b",
+    "manifest_sha256": "9da729cbbfe5fe4519567163622ddb1c0c7b2d2e82f481ab3c37941b47dc02a8"
+  },
+  "causal_claim": false,
+  "input_rows_after_covariate_completeness": 3138,
+  "observed_outcome_rows": 2958,
+  "aki_events": 200,
+  "center_counts": [
+    {
+      "center": "MOVER",
+      "size": 1137,
+      "sum": 132.0
+    },
+    {
+      "center": "VitalDB",
+      "size": 1821,
+      "sum": 68.0
+    }
+  ],
+  "primary_formula": "early_aki_48h ~ C(center) + age10 + C(sex_group) + C(asa_group) + egfr10 + C(surgical_category) + anesthesia_hours + total_low10 + excess5_10 + mean_depth5",
+  "comparator_formula": "early_aki_48h ~ C(center) + age10 + C(sex_group) + C(asa_group) + egfr10 + C(surgical_category) + anesthesia_hours + total_low10 + mean_depth5",
+  "likelihood_ratio_test_excess5": {
+    "statistic": 0.5915700275984364,
+    "df": 1,
+    "p_value": 0.4418126401941287
+  },
+  "models": {
+    "pooled_primary": {
+      "converged": true,
+      "maximum_absolute_coefficient": 4.2024061249349804,
+      "separation_trigger": false,
+      "nobs": 2958,
+      "parameters": 17
+    },
+    "pooled_ipow": {
+      "converged": true,
+      "maximum_absolute_coefficient": 4.181878532947469,
+      "separation_trigger": false,
+      "nobs": 2958,
+      "parameters": 17
+    },
+    "center_specific": {
+      "MOVER": {
+        "converged": true,
+        "maximum_absolute_coefficient": 2.203564144247437,
+        "separation_trigger": false,
+        "nobs": 1137,
+        "parameters": 16
+      },
+      "VitalDB": {
+        "converged": true,
+        "maximum_absolute_coefficient": 6.566026084956932,
+        "separation_trigger": false,
+        "nobs": 1821,
+        "parameters": 15
+      }
+    },
+    "center_interaction": {
+      "converged": true,
+      "maximum_absolute_coefficient": 4.2355195311712635,
+      "separation_trigger": false,
+      "nobs": 2958,
+      "parameters": 18
+    },
+    "pooled_common_surgical_support": {
+      "converged": true,
+      "maximum_absolute_coefficient": 4.55251539765843,
+      "separation_trigger": false,
+      "nobs": 2508,
+      "parameters": 16
+    }
+  },
+  "observation_weighting": {
+    "status": "available",
+    "formula": "observed_numeric ~ C(center) + age10 + C(sex_group) + C(asa_group) + egfr10 + C(surgical_category) + anesthesia_hours + total_low10 + mean_depth5 + C(icu_group)",
+    "probability_clip": [
+      0.05,
+      0.95
+    ],
+    "weight_truncation_quantiles": [
+      0.01,
+      0.99
+    ],
+    "observed_weight_min_median_max_before_truncation": [
+      0.9779806659505907,
+      1.0157456197970698,
+      1.9446527774355096
+    ],
+    "observed_weight_min_median_max_after_truncation": [
+      0.9779806659505907,
+      1.0157456197970698,
+      1.4425297075958947
+    ],
+    "extreme_weight_warning": false,
+    "model": {
+      "converged": true,
+      "maximum_absolute_coefficient": 2.4306842235715433,
+      "separation_trigger": false,
+      "nobs": 3138,
+      "parameters": 17
+    }
+  },
+  "scenarios": {
+    "pooled_primary": {
+      "comparison": "one_20_minute_episode_vs_four_5_minute_episodes",
+      "fixed_total_low_minutes": 20,
+      "fixed_mean_depth_below_65_mmhg": 5,
+      "odds_ratio": 1.0869586811944927,
+      "odds_ratio_95ci": [
+        0.8831289914875318,
+        1.3378330753630923
+      ],
+      "standardized_reference_risk": 0.06453146280402511,
+      "standardized_comparison_risk": 0.06928633069330702,
+      "standardized_risk_difference": 0.0047548678892818915,
+      "standardized_risk_difference_95ci": [
+        -0.007277005278689849,
+        0.01779226825218355
+      ],
+      "standardized_risk_ratio": 1.0736829398044472,
+      "standardized_risk_ratio_95ci": [
+        0.8924433620782529,
+        1.2756652053433253
+      ],
+      "uncertainty_method": "multivariate-normal coefficient simulation using robust covariance"
+    },
+    "pooled_ipow": {
+      "comparison": "one_20_minute_episode_vs_four_5_minute_episodes",
+      "fixed_total_low_minutes": 20,
+      "fixed_mean_depth_below_65_mmhg": 5,
+      "odds_ratio": 1.095409946261942,
+      "odds_ratio_95ci": [
+        0.8916792095644686,
+        1.3456890521824327
+      ],
+      "standardized_reference_risk": 0.0642869567481962,
+      "standardized_comparison_risk": 0.06947986766224505,
+      "standardized_risk_difference": 0.005192910914048867,
+      "standardized_risk_difference_95ci": [
+        -0.006474057798632785,
+        0.017632163281255595
+      ],
+      "standardized_risk_ratio": 1.0807770530247498,
+      "standardized_risk_ratio_95ci": [
+        0.9052280955691581,
+        1.2751677406115536
+      ],
+      "uncertainty_method": "multivariate-normal coefficient simulation using robust covariance"
+    },
+    "center_MOVER": {
+      "comparison": "one_20_minute_episode_vs_four_5_minute_episodes",
+      "fixed_total_low_minutes": 20,
+      "fixed_mean_depth_below_65_mmhg": 5,
+      "odds_ratio": 1.1845922737863859,
+      "odds_ratio_95ci": [
+        0.9409586434889857,
+        1.4913076837375643
+      ],
+      "standardized_reference_risk": 0.10440532841018547,
+      "standardized_comparison_risk": 0.1198627275616048,
+      "standardized_risk_difference": 0.015457399151419336,
+      "standardized_risk_difference_95ci": [
+        -0.006243781512727216,
+        0.03910064161794156
+      ],
+      "standardized_risk_ratio": 1.1480518225151366,
+      "standardized_risk_ratio_95ci": [
+        0.9436903700203022,
+        1.366384177177771
+      ],
+      "uncertainty_method": "multivariate-normal coefficient simulation using robust covariance"
+    },
+    "center_VitalDB": {
+      "comparison": "one_20_minute_episode_vs_four_5_minute_episodes",
+      "fixed_total_low_minutes": 20,
+      "fixed_mean_depth_below_65_mmhg": 5,
+      "odds_ratio": 0.8099760072539999,
+      "odds_ratio_95ci": [
+        0.5600746402010512,
+        1.1713816074436505
+      ],
+      "standardized_reference_risk": 0.03950761005207551,
+      "standardized_comparison_risk": 0.03267991841253227,
+      "standardized_risk_difference": -0.0068276916395432425,
+      "standardized_risk_difference_95ci": [
+        -0.018964594261015696,
+        0.004894433775879869
+      ],
+      "standardized_risk_ratio": 0.8271803424569705,
+      "standardized_risk_ratio_95ci": [
+        0.5865370438929018,
+        1.128903553333673
+      ],
+      "uncertainty_method": "multivariate-normal coefficient simulation using robust covariance"
+    },
+    "pooled_common_surgical_support": {
+      "comparison": "one_20_minute_episode_vs_four_5_minute_episodes",
+      "fixed_total_low_minutes": 20,
+      "fixed_mean_depth_below_65_mmhg": 5,
+      "odds_ratio": 1.069073315459145,
+      "odds_ratio_95ci": [
+        0.8272205893246466,
+        1.3816360092776476
+      ],
+      "standardized_reference_risk": 0.05961894414685885,
+      "standardized_comparison_risk": 0.06311226552810542,
+      "standardized_risk_difference": 0.003493321381246579,
+      "standardized_risk_difference_95ci": [
+        -0.009327869402886125,
+        0.018249207342877743
+      ],
+      "standardized_risk_ratio": 1.0585941504204015,
+      "standardized_risk_ratio_95ci": [
+        0.8583606664866976,
+        1.308598889579435
+      ],
+      "uncertainty_method": "multivariate-normal coefficient simulation using robust covariance"
+    }
+  },
+  "bootstrap_stability": {
+    "method": "nonparametric patient bootstrap stratified by center",
+    "repetitions": 500,
+    "valid_fits": 499,
+    "failed_fits": 1,
+    "instability_flag": false,
+    "scenario_or_median": 1.1008807476109654,
+    "scenario_or_percentile_95ci": [
+      0.9135441157258156,
+      1.399674073617132
+    ],
+    "proportion_scenario_or_above_one": 0.8156312625250501
+  },
+  "warnings": [
+    "This is an observational association model, not a causal effect estimate.",
+    "Formal manuscript reporting requires bootstrap stability analysis and final contract hash verification."
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "cohort": {
+    "n": 2958,
+    "events": 200
+  },
+  "all_operations_patient_clustered": {
+    "cases": 2958,
+    "unique_patients": 2958,
+    "note": "One operation per patient was retained by design, so a patient-clustered variance is identical to the primary robust covariance and adds nothing."
+  },
+  "two_hinge_piecewise_linear_5_and_10_minutes": {
+    "converged": true,
+    "n": 2958,
+    "excess5_per_10_min": {
+      "odds_ratio": 1.5170391483213654,
+      "odds_ratio_95ci": [
+        0.9921950906629959,
+        2.3195113533587306
+      ],
+      "p": 0.0543803267835614
+    },
+    "excess10_per_10_min": {
+      "odds_ratio": 0.6924707616883491,
+      "odds_ratio_95ci": [
+        0.4588607461336862,
+        1.0450136775341825
+      ],
+      "p": 0.08007343429323364
+    }
+  },
+  "simple_sustained_fraction_benchmark": {
+    "term": "sustained_fraction",
+    "unit": 0.25,
+    "odds_ratio": 1.0599624945454307,
+    "odds_ratio_95ci": [
+      0.8988898587347595,
+      1.2498978366764464
+    ],
+    "risk_at_zero": 0.062294673407986466,
+    "risk_at_unit": 0.06545760708531294,
+    "risk_difference": 0.0031629336773264724,
+    "risk_difference_95ci": [
+      -0.006857466434063458,
+      0.010631597966563025
+    ],
+    "definition": "longest hypotensive episode divided by total hypotensive minutes; contrast is 0 versus 0.25"
+  },
+  "episode_count_benchmark": {
+    "term": "episode_count_10",
+    "unit": 1.0,
+    "odds_ratio": 0.864679203712889,
+    "odds_ratio_95ci": [
+      0.6415433487009209,
+      1.1654241710206084
+    ],
+    "risk_at_zero": 0.07526474414123381,
+    "risk_at_unit": 0.06670133779470461,
+    "risk_difference": -0.008563406346529204,
+    "risk_difference_95ci": [
+      -0.028453092683766928,
+      0.00872914072920223
+    ],
+    "definition": "10 additional hypotensive episodes"
+  },
+  "episode_variability_benchmark": {
+    "term": "episode_spread_10",
+    "unit": 1.0,
+    "odds_ratio": 1.396979112561554,
+    "odds_ratio_95ci": [
+      0.8446455257095979,
+      2.3104966302801917
+    ],
+    "risk_at_zero": 0.06268674854080658,
+    "risk_at_unit": 0.08309826363119856,
+    "risk_difference": 0.020411515090391977,
+    "risk_difference_95ci": [
+      -0.008398015397525618,
+      0.057786999247294184
+    ],
+    "definition": "10-minute increase in the within-patient standard deviation of episode durations"
+  }
+}
