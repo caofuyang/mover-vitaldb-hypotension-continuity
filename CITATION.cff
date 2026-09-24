@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this code or the archived aggregate results, please cite the manuscript and this release."
+title: "Two-centre analysis of intraoperative hypotension episode continuity and 48-hour creatinine-defined acute kidney injury (MOVER and VitalDB)"
+abstract: >-
+  Analysis code, locked analysis contract, and aggregate expected results for a
+  two-centre retrospective cohort study harmonising the MOVER (United States) and
+  VitalDB (South Korea) databases to test whether concentrating 20 minutes of
+  intraoperative hypotension into one episode carries greater 48-hour
+  creatinine-defined acute kidney injury risk than distributing the same duration
+  across four episodes. No patient-level data are included.
+authors:
+  - family-names: Li
+    given-names: Juan
+  - family-names: Tang
+    given-names: Nana
+  - family-names: Li
+    given-names: Jiannan
+  - family-names: Cao
+    given-names: Fuyang
+  - family-names: Yang
+    given-names: Lu
+version: 1.0.0
+date-released: 2026-09-24
+license: MIT
+type: software

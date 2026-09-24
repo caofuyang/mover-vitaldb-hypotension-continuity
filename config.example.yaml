@@ -1,0 +1,10 @@
+paths:
+  mover_export_zip: /path/to/MOVER_episode_export_v5_1_YYYYMMDD_HHMMSS.zip
+  vitaldb_cases_csv: /path/to/VitalDB/cases.csv
+  vitaldb_labs_csv: /path/to/VitalDB/labs.csv
+  vitaldb_manifest_json: /path/to/VitalDB/map_manifest.json
+  vitaldb_map_zip: /path/to/VitalDB/map_tracks.zip
+  output_directory: ./reproduction_run
+
+analysis:
+  flameRisk_commit: 85a6d1b81dcbdd1f45b488d13567cbc5577649bc
