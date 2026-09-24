@@ -1,0 +1,211 @@
+project: episode_duration_risk_accumulation_noncardiac_aki
+version: '4.1'
+date: '2026-09-23'
+status: locked_ready_for_final_v4_1_model_after_documented_technical_amendment
+
+scientific_position:
+  type: two_center_cross_country_confirmatory_association_and_transportability
+  source_method: FLAME_duration_dependent_risk_accumulation
+  novelty_claim: cross_country_two_center_evaluation_in_heterogeneous_noncardiac_surgery
+  prohibited_claim: first_model_of_episode_duration_risk_accumulation
+
+design:
+  primary_strategy: one_stage_pooled_model_with_fixed_center_intercept
+  centers:
+    - dataset: MOVER_EPIC
+      hospital: UCI_Medical_Center
+    - dataset: VitalDB
+      hospital: Seoul_National_University_Hospital
+  center_specific_replication: secondary
+  common_surgical_support_restriction: sensitivity
+  harmonized_resolution_seconds: 60
+  vitaldb_high_resolution_sensitivity_seconds: 10
+
+population:
+  age_min_years: 18
+  general_anesthesia_required: true
+  cardiac_surgery_excluded: true
+  transplant_surgery_excluded: true
+  asa_allowed: [1, 2, 3, 4]
+  baseline_creatinine_lookback_days: 30
+  exclude_baseline_creatinine_gte_mg_dl: 4.0
+  exclude_baseline_egfr_lt: 15
+  postoperative_creatinine_required_within_hours: 48
+  minimum_hypotension_duration: none
+  one_operation_per_patient_primary: true
+  operation_selection:
+    mover: earliest_eligible_operation_after_preexposure_and_map_quality_requirements_before_postoperative_outcome_availability
+    vitaldb: fixed_sha256_hash_seed_20260923_after_preexposure_and_map_quality_requirements_before_postoperative_outcome_availability
+
+map_processing:
+  mover_primary_source_context: Devices Testing Template
+  mover_primary_source_display_name: MAP-ART A-line
+  mover_primary_source_unit: mmHg
+  mover_raw_unit_field: empty
+  mover_unit_evidence: prespecified_nearest_paired_nibp_invasive_scale_validation
+  mover_scale_validation:
+    minimum_valid_pairs: 1000
+    minimum_correlation: 0.50
+    maximum_median_absolute_difference_mmhg: 15
+    median_ratio_range_invasive_to_nibp: [0.80, 1.20]
+    observed_valid_pairs: 241132
+    observed_correlation: 0.5552512708328281
+    observed_median_absolute_difference_mmhg: 8.0
+    observed_median_ratio_invasive_to_nibp: 0.9625
+    gate_passed: true
+  interval: anesthesia_start_inclusive_to_anesthesia_end_exclusive
+  bin_seconds: 60
+  bin_summary: median
+  valid_range_mmhg: [20, 160]
+  threshold_operator: '<'
+  threshold_mmhg: 65
+  missing_bin_primary: breaks_episode
+  interpolation_primary: none
+  one_minute_bridge_sensitivity: true
+  episode_vector_required: true
+
+primary_outcome:
+  name: early_postoperative_creatinine_defined_aki
+  window_start: anesthesia_end
+  window_hours: 48
+  baseline: latest_valid_preoperative_creatinine_within_30_days
+  criteria:
+    - delta_creatinine_gte_0.3_mg_dl
+    - ratio_to_baseline_gte_1.5
+  tolerance: 1.0e-10
+  urine_output: unavailable
+  reporting_label: adapted_creatinine_only_aki
+  missing_postoperative_creatinine: not_assessable
+
+duplicate_creatinine_rule:
+  remove_known_sentinels: [9999999]
+  same_timestamp_spread_lte_mg_dl: 0.1
+  if_within_tolerance: median
+  if_above_tolerance_primary: exclude_timestamp
+  sensitivity: lower_and_upper_classification_bounds
+
+primary_model:
+  link: logit
+  fixed_center_intercept: true
+  total_duration_term: total_hypotension_minutes_divided_by_10
+  duration_pattern_term: sum_over_episodes_of_max_episode_minutes_minus_5_and_zero_divided_by_10
+  duration_pattern_interpretation: minutes_within_episodes_beyond_the_first_5_minutes
+  primary_hypothesis: two_sided_test_duration_pattern_coefficient_equals_zero
+  rationale: one_additional_degree_of_freedom_due_center_level_event_counts
+  common_covariates:
+    - age
+    - sex
+    - asa
+    - baseline_egfr
+    - locked_surgical_category
+    - anesthesia_duration
+    - mean_depth_below_65
+  comparator: identical_model_without_duration_pattern_term
+  estimation: penalized_or_bias_reduced_if_prespecified_convergence_trigger_met
+  convergence_trigger:
+    - separation_or_quasi_separation
+    - maximum_absolute_coefficient_greater_than_10
+    - nonconvergence_after_100_iterations
+  stability_analysis:
+    method: nonparametric_patient_bootstrap_stratified_by_center
+    repetitions: 500
+    seed: 20260923
+    target: primary_20_minute_vs_four_5_minute_scenario_odds_ratio
+    interval: percentile_95_percent
+    instability_flag: fewer_than_450_valid_bootstrap_fits
+
+primary_contrast:
+  total_hypotension_minutes: 20
+  reference: four_5_minute_episodes
+  comparison: one_20_minute_episode
+  measures:
+    - odds_ratio
+    - standardized_risk_difference
+    - standardized_risk_ratio
+    - log_odds_difference
+  fixed_mean_depth_below_65_mmhg: 5
+  additional_scenarios:
+    - twenty_1_minute_episodes
+    - two_10_minute_episodes
+
+cross_center_assessment:
+  site_specific_same_model: required
+  center_by_duration_pattern_interaction: secondary_estimate_with_interval
+  do_not_require_each_center_p_below_0_05: true
+  pooled_common_effect_requires_directional_compatibility_review: true
+  site_specific_interpretation: secondary_estimation_with_confidence_intervals_not_required_to_be_statistically_significant
+  common_support_categories:
+    - abdominal
+    - thoracic
+    - vascular
+    - genitourinary_gynecologic
+    - superficial_other
+
+flexible_flame_analysis:
+  role: supportive_only
+  package: flameRisk
+  package_source: https://github.com/xinkai-zhou/flameRisk
+  package_status: development_not_CRAN
+  exact_commit_sha: 85a6d1b81dcbdd1f45b488d13567cbc5577649bc
+  commit_pinned_date: '2026-09-23'
+  exact_commit_sha_required_before_analysis: true
+  constraints: [f_0_equals_0, monotone_nondecreasing]
+  reason_not_primary: limited_center_specific_event_counts_and_undercoverage_risk_for_complex_shapes
+
+selection_bias:
+  compare_postop_creatinine_observed_vs_missing: required
+  observation_probability_model: required
+  inverse_probability_observation_weighting: sensitivity
+  current_mover_export_sufficient: true
+  primary_complete_outcome_analysis: unweighted
+  sensitivity: stabilized_inverse_probability_of_observation_weighting
+  probability_clip: [0.05, 0.95]
+  weight_truncation_quantiles: [0.01, 0.99]
+
+secondary_analyses:
+  - seven_day_ratio_component
+  - threshold_60_and_70_mmhg
+  - one_minute_gap_bridge
+  - vitaldb_10_second_processing
+  - simple_sustained_fraction_benchmark
+  - episode_count_and_duration_variability_benchmark
+  - next_surgery_censoring
+  - all_operations_patient_clustered
+  - hinge_at_10_minutes
+  - two_hinge_piecewise_linear_5_and_10_minutes
+  - full_monotone_FLAME_if_convergence_and_bootstrap_stability_pass
+
+hard_gates_before_formal_model:
+  - mover_reexport_without_postoperative_creatinine_preselection
+  - mover_paired_nibp_invasive_scale_validation
+  - locked_noncardiac_surgical_mapping
+  - full_episode_duration_vectors
+  - exposure_support_for_20_minute_scenarios_in_both_centers
+  - contract_hash_recorded_before_association_model
+  - flameRisk_commit_pinned_for_supportive_analysis
+  - synthetic_outcome_simulation_updated_after_mover_reexport
+
+reporting:
+  guidelines: [STROBE, RECORD]
+  no_causal_language: true
+  no_complete_kdigo_claim: true
+  no_significance_based_definition_selection: true
+
+locked_design_evidence:
+  combined_parent_rows: 3138
+  combined_outcome_observed_rows: 2958
+  combined_aki_events: 200
+  center_counts:
+    mover: {parent_rows: 1178, outcome_observed_rows: 1137, aki_events: 132, longest_episode_gte_20: 140}
+    vitaldb: {parent_rows: 1960, outcome_observed_rows: 1821, aki_events: 68, longest_episode_gte_20: 88}
+  pooled_synthetic_power_for_or_1_3: 0.757
+  pooled_synthetic_power_for_or_1_5: 0.9699849924962481
+  simulation_uses_observed_exposure_patterns_and_synthetic_outcomes_only: true
+  real_exposure_outcome_model_run_before_initial_v4_lock: false
+  initial_v4_model_run_before_v4_1_amendment: true
+  technical_correction_after_initial_locked_fit_before_final_v4_1_model:
+    issue: icu_flag_used_only_in_observation_probability_sensitivity_was_encoded_as_Y_N_in_vitaldb_and_Yes_No_in_mover
+    correction: harmonized_to_Yes_No_before_refitting_the_observation_probability_model
+    primary_outcome_exposure_and_primary_model_covariates_changed: false
+    initial_pooled_primary_scenario_or: 1.0869586811944927
+    initial_pooled_primary_likelihood_ratio_p: 0.4418126401941287

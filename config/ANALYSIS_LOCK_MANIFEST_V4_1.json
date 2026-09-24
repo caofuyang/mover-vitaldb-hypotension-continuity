@@ -1,0 +1,62 @@
+{
+  "status": "locked_ready_for_final_v4_1_model_after_documented_technical_amendment",
+  "purpose": "v4.1 lock amendment after ICU coding correction limited to the observation-probability sensitivity model",
+  "lock_date": "2026-09-23",
+  "checks": {
+    "contract_status_locked": true,
+    "mover_independent_validation_passed": true,
+    "mover_no_association_model_run": true,
+    "mover_feature_warnings_empty": true,
+    "vitaldb_raw_map_manifest_complete": true,
+    "harmonization_consistency_zero": true,
+    "combined_case_ids_unique": true,
+    "combined_outcomes_available": true,
+    "twenty_minute_support_both_centers": true,
+    "full_episode_vectors_present": true,
+    "synthetic_simulation_only": true,
+    "model_matrix_preflight_passed": true,
+    "flamerisk_commit_pinned": true
+  },
+  "all_hard_gates_passed": true,
+  "prior_locked_v4_association_model_run": true,
+  "amendment_changed_primary_outcome_exposure_or_covariates": false,
+  "center_counts": {
+    "MOVER": {
+      "parent_rows": 1178,
+      "outcome_observed_rows": 1137,
+      "aki_events": 132,
+      "longest_episode_gte_20": 140
+    },
+    "VitalDB": {
+      "parent_rows": 1960,
+      "outcome_observed_rows": 1821,
+      "aki_events": 68,
+      "longest_episode_gte_20": 88
+    }
+  },
+  "combined_counts": {
+    "parent_rows": 3138,
+    "outcome_observed_rows": 2958,
+    "aki_events": 200
+  },
+  "flameRisk": {
+    "repository": "https://github.com/xinkai-zhou/flameRisk",
+    "commit": "85a6d1b81dcbdd1f45b488d13567cbc5577649bc"
+  },
+  "sha256": {
+    "analysis_contract": "fefbbb10d9e7f92d32ee77764b81475f555056fd621031737010bb5e4a7d3c59",
+    "combined_features": "0bd96f2fe98c02f74230f52f010cee2b51102a6532c2d1f53b19e2d53e46996b",
+    "mover_validation": "b09fdac460b37bc2f12e41c871ca46360d090f51138edbd17def6ddbb27fd449",
+    "mover_feature_audit": "c62413610a013abfa9d4c66992aff50b310e6da6fb380e8b187dcbf17823358d",
+    "vitaldb_feature_audit": "5c891eb8deeca76b60c53ee6632c7fc8231b46e4da965088bec36b2800d5e045",
+    "harmonization_audit": "9492e58ae368919c38254aefe7ac1451cc08eb27fc96e2be639814f8af44354c",
+    "design_simulation": "443bd8c9eed41927b97f2ef32f46c85bbbb04439901b5008ffc520645c48a8a0",
+    "model_preflight": "aceab0d2bef6e0375fdf34dc6c90cf3d1ff05bf0b1aaf38485a76171255ec906",
+    "surgical_category_rules": "af6d4329421c33879ecc9c0528175781a67069edc558c9e7e56e31cfb8531f6e",
+    "primary_model_script": "7621d5055d7d0d0c3fe984db64a9c42fe911dd8df837dafdcdf5183382e16ce8",
+    "feature_harmonization_script": "a49b378e0f17b1d871c35ebd2750d99d00dc42b899b2cdeb7470c0b90d69bfd4",
+    "mover_feature_script": "bd43838bb1414ca1979ad249b128f9891cc9d45430bb6b2bfa511acf67425a61",
+    "design_simulation_script": "a22d67095f07aeeadf4499a3fcf125f5a1f956cee7eda2d819915805b37a5dd7",
+    "model_preflight_script": "715ed0b2f9770ee1794709a1cbde80df49251737a6caacee066121a3ff36bddf"
+  }
+}
