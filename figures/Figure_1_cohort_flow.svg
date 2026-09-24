@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="460.8pt" height="531.669656pt" viewBox="0 0 460.8 531.669656" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-24T10:09:35.598942</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.9, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 531.669656 
+L 460.8 531.669656 
+L 460.8 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 57.6432 107.09516 
+L 403.1568 107.09516 
+Q 409.8528 107.09516 409.8528 99.77708 
+L 409.8528 51.477752 
+Q 409.8528 44.159672 403.1568 44.159672 
+L 57.6432 44.159672 
+Q 50.9472 44.159672 50.9472 51.477752 
+L 50.9472 99.77708 
+Q 50.9472 107.09516 57.6432 107.09516 
+z
+" clip-path="url(#pfa153d7fe8)" style="fill: #f3f7fa; stroke: #274c77; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 57.6432 185.15468 
+L 403.1568 185.15468 
+Q 409.8528 185.15468 409.8528 177.8366 
+L 409.8528 129.537272 
+Q 409.8528 122.219192 403.1568 122.219192 
+L 57.6432 122.219192 
+Q 50.9472 122.219192 50.9472 129.537272 
+L 50.9472 177.8366 
+Q 50.9472 185.15468 57.6432 185.15468 
+z
+" clip-path="url(#pfa153d7fe8)" style="fill: #f3f7fa; stroke: #274c77; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 57.6432 263.2142 
+L 403.1568 263.2142 
+Q 409.8528 263.2142 409.8528 255.89612 
+L 409.8528 207.596792 
+Q 409.8528 200.278712 403.1568 200.278712 
+L 57.6432 200.278712 
+Q 50.9472 200.278712 50.9472 207.596792 
+L 50.9472 255.89612 
+Q 50.9472 263.2142 57.6432 263.2142 
+z
+" clip-path="url(#pfa153d7fe8)" style="fill: #f3f7fa; stroke: #274c77; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 57.6432 341.27372 
+L 403.1568 341.27372 
+Q 409.8528 341.27372 409.8528 333.95564 
+L 409.8528 285.656312 
+Q 409.8528 278.338232 403.1568 278.338232 
+L 57.6432 278.338232 
+Q 50.9472 278.338232 50.9472 285.656312 
+L 50.9472 333.95564 
+Q 50.9472 341.27372 57.6432 341.27372 
+z
+" clip-path="url(#pfa153d7fe8)" style="fill: #f3f7fa; stroke: #274c77; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 57.6432 419.33324 
+L 403.1568 419.33324 
+Q 409.8528 419.33324 409.8528 412.01516 
+L 409.8528 363.715832 
+Q 409.8528 356.397752 403.1568 356.397752 
+L 57.6432 356.397752 
+Q 50.9472 356.397752 50.9472 363.715832 
+L 50.9472 412.01516 
+Q 50.9472 419.33324 57.6432 419.33324 
+z
+" clip-path="url(#pfa153d7fe8)" style="fill: #f3f7fa; stroke: #274c77; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 57.6432 497.39276 
+L 403.1568 497.39276 
+Q 409.8528 497.39276 409.8528 490.07468 
+L 409.8528 441.775352 
+Q 409.8528 434.457272 403.1568 434.457272 
+L 57.6432 434.457272 
+Q 50.9472 434.457272 50.9472 441.775352 
+L 50.9472 490.07468 
+Q 50.9472 497.39276 57.6432 497.39276 
+z
+" clip-path="url(#pfa153d7fe8)" style="fill: #f3f7fa; stroke: #274c77; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(169.559375 66.429135)">Exported parent cohorts</text>
+    <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(166.551562 78.386791)">MOVER: 3,672 operations</text>
+    <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(166.221094 90.344447)">VitalDB: 6,388 operations</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(165.610156 144.488655)">Eligibility and MAP quality</text>
+    <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(98.794531 156.446311)">Noncardiac, nontransplant, adult general anesthesia</text>
+    <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(108.220312 168.403967)">MAP coverage ≥70% and ≥30 observed minutes</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(155.553125 222.548175)">Valid baseline kidney function</text>
+    <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(166.551562 234.505831)">MOVER: 1,456 operations</text>
+    <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(166.221094 246.463487)">VitalDB: 2,014 operations</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(133.16875 300.607695)">One prespecified operation per patient</text>
+    <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(172.765625 312.565351)">MOVER: 1,178 patients</text>
+    <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(172.435156 324.523007)">VitalDB: 1,960 patients</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(135.904687 378.667215)">48-hour creatinine outcome observed</text>
+    <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(169.954687 390.624871)">MOVER: 1,137 (132 AKI)</text>
+    <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(172.805469 402.582527)">VitalDB: 1,821 (68 AKI)</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(170.817969 462.705563)">Pooled primary analysis</text>
+    <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif" transform="translate(153.083594 474.663219)">2,958 patients; 200 AKI events</text>
+   </g>
+   <g id="patch_8">
+    <path d="M 230.4 103.242032 
+Q 230.4 114.659062 230.4 124.734452 
+" style="fill: none; stroke: #274c77; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 232.4 120.734452 
+L 230.4 124.734452 
+L 228.4 120.734452 
+z
+" style="fill: #274c77; stroke: #274c77; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 230.4 181.301552 
+Q 230.4 192.718582 230.4 202.793972 
+" style="fill: none; stroke: #274c77; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 232.4 198.793972 
+L 230.4 202.793972 
+L 228.4 198.793972 
+z
+" style="fill: #274c77; stroke: #274c77; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 230.4 259.361072 
+Q 230.4 270.778102 230.4 280.853492 
+" style="fill: none; stroke: #274c77; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 232.4 276.853492 
+L 230.4 280.853492 
+L 228.4 276.853492 
+z
+" style="fill: #274c77; stroke: #274c77; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 230.4 337.420592 
+Q 230.4 348.837622 230.4 358.913012 
+" style="fill: none; stroke: #274c77; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 232.4 354.913012 
+L 230.4 358.913012 
+L 228.4 354.913012 
+z
+" style="fill: #274c77; stroke: #274c77; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 230.4 415.480112 
+Q 230.4 426.897142 230.4 436.972532 
+" style="fill: none; stroke: #274c77; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 232.4 432.972532 
+L 230.4 436.972532 
+L 228.4 432.972532 
+z
+" style="fill: #274c77; stroke: #274c77; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle" x="230.4" y="18.597656" transform="rotate(-0 230.4 18.597656)">Study cohort flow</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pfa153d7fe8">
+   <rect x="7.2" y="36.597656" width="446.4" height="487.872"/>
+  </clipPath>
+ </defs>
+</svg>
