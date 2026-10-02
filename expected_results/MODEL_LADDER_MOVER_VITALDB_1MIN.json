@@ -1,0 +1,183 @@
+{
+  "note": "POST HOC exploratory model ladder (not in locked contract). n=2958 observed-outcome patients.",
+  "outcome": "early_aki_48h (creatinine-only, 48h)",
+  "exposure_unit": "total_low10 = per 10 min below 65 mmHg",
+  "ladder": [
+    {
+      "step": "M0_duration_crude",
+      "n": 2958,
+      "total_low10": {
+        "OR": 1.093,
+        "lo": 1.06,
+        "hi": 1.127,
+        "p": 0.0
+      },
+      "mean_depth5": null,
+      "anesthesia_hours": null,
+      "excess5_10": null
+    },
+    {
+      "step": "M1_+center",
+      "n": 2958,
+      "total_low10": {
+        "OR": 1.064,
+        "lo": 1.031,
+        "hi": 1.098,
+        "p": 0.0001
+      },
+      "mean_depth5": null,
+      "anesthesia_hours": null,
+      "excess5_10": null
+    },
+    {
+      "step": "M2_+demog_asa_egfr_surg",
+      "n": 2958,
+      "total_low10": {
+        "OR": 1.055,
+        "lo": 1.019,
+        "hi": 1.091,
+        "p": 0.0022
+      },
+      "mean_depth5": null,
+      "anesthesia_hours": null,
+      "excess5_10": null
+    },
+    {
+      "step": "M3_+depth",
+      "n": 2958,
+      "total_low10": {
+        "OR": 1.055,
+        "lo": 1.019,
+        "hi": 1.091,
+        "p": 0.0022
+      },
+      "mean_depth5": {
+        "OR": 1.001,
+        "lo": 0.91,
+        "hi": 1.102,
+        "p": 0.979
+      },
+      "anesthesia_hours": null,
+      "excess5_10": null
+    },
+    {
+      "step": "M4_+anesthesia_duration",
+      "n": 2958,
+      "total_low10": {
+        "OR": 1.026,
+        "lo": 0.991,
+        "hi": 1.063,
+        "p": 0.1456
+      },
+      "mean_depth5": null,
+      "anesthesia_hours": {
+        "OR": 1.137,
+        "lo": 1.07,
+        "hi": 1.208,
+        "p": 0.0
+      },
+      "excess5_10": null
+    },
+    {
+      "step": "M5_+anesthesia+depth",
+      "n": 2958,
+      "total_low10": {
+        "OR": 1.027,
+        "lo": 0.991,
+        "hi": 1.063,
+        "p": 0.1443
+      },
+      "mean_depth5": {
+        "OR": 1.007,
+        "lo": 0.913,
+        "hi": 1.11,
+        "p": 0.8904
+      },
+      "anesthesia_hours": {
+        "OR": 1.137,
+        "lo": 1.07,
+        "hi": 1.208,
+        "p": 0.0
+      },
+      "excess5_10": null
+    },
+    {
+      "step": "M6_+pattern(=primary)",
+      "n": 2958,
+      "total_low10": {
+        "OR": 0.996,
+        "lo": 0.912,
+        "hi": 1.089,
+        "p": 0.9353
+      },
+      "mean_depth5": {
+        "OR": 1.001,
+        "lo": 0.907,
+        "hi": 1.106,
+        "p": 0.9794
+      },
+      "anesthesia_hours": {
+        "OR": 1.144,
+        "lo": 1.076,
+        "hi": 1.217,
+        "p": 0.0
+      },
+      "excess5_10": {
+        "OR": 1.057,
+        "lo": 0.92,
+        "hi": 1.214,
+        "p": 0.4313
+      }
+    }
+  ],
+  "per_center_crude_and_adjusted": {
+    "MOVER": {
+      "n": 1137,
+      "events": 132,
+      "crude_duration": {
+        "OR": 1.047,
+        "lo": 1.01,
+        "hi": 1.085,
+        "p": 0.012
+      },
+      "adj_duration": {
+        "OR": 1.05,
+        "lo": 1.008,
+        "hi": 1.093,
+        "p": 0.0178
+      },
+      "adj_depth": {
+        "OR": 1.088,
+        "lo": 0.951,
+        "hi": 1.245,
+        "p": 0.2196
+      }
+    },
+    "VitalDB": {
+      "n": 1821,
+      "events": 68,
+      "crude_duration": {
+        "OR": 1.129,
+        "lo": 1.044,
+        "hi": 1.222,
+        "p": 0.0024
+      },
+      "adj_duration": {
+        "OR": 1.085,
+        "lo": 0.996,
+        "hi": 1.183,
+        "p": 0.0616
+      },
+      "adj_depth": {
+        "OR": 0.935,
+        "lo": 0.803,
+        "hi": 1.089,
+        "p": 0.3896
+      }
+    }
+  },
+  "correlations": {
+    "total_low_vs_excess5": 0.88,
+    "total_low_minutes_vs_anesthesia_minutes": 0.389
+  }
+}

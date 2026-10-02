@@ -1,0 +1,40 @@
+{
+  "flow": [
+    {
+      "stage": "all_operations",
+      "n": 130960
+    },
+    {
+      "stage": "eligible_screen",
+      "n": 91636
+    },
+    {
+      "stage": "map_quality_hold",
+      "n": 34641
+    },
+    {
+      "stage": "valid_baseline",
+      "n": 31241
+    },
+    {
+      "stage": "one_op_per_patient",
+      "n": 27597
+    }
+  ],
+  "n": 27597,
+  "observed": 23050,
+  "aki_events": 1214,
+  "median_anesthesia_min": 190.0,
+  "median_readings": 38.0,
+  "any_hypotension": 23952,
+  "longest_ge_10": 17509,
+  "longest_ge_20": 7066,
+  "category_counts": {
+    "out_of_support": 9684,
+    "abdominal": 6107,
+    "genitourinary_gynecologic": 5163,
+    "thoracic": 3229,
+    "superficial_other": 2319,
+    "vascular": 1095
+  }
+}

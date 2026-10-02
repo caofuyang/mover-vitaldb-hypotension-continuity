@@ -1,13 +1,18 @@
 cff-version: 1.2.0
 message: "If you use this code or the archived aggregate results, please cite the manuscript and this release."
-title: "Two-centre analysis of intraoperative hypotension episode continuity and 48-hour creatinine-defined acute kidney injury (MOVER and VitalDB)"
+title: "Blood-pressure sampling resolution and the intraoperative hypotension-acute kidney injury association (MOVER, VitalDB and INSPIRE)"
 abstract: >-
-  Analysis code, locked analysis contract, and aggregate expected results for a
-  two-centre retrospective cohort study harmonising the MOVER (United States) and
-  VitalDB (South Korea) databases to test whether concentrating 20 minutes of
-  intraoperative hypotension into one episode carries greater 48-hour
-  creatinine-defined acute kidney injury risk than distributing the same duration
-  across four episodes. No patient-level data are included.
+  Analysis code, locked analysis contract and aggregate expected results for a
+  multi-database study of intraoperative hypotension and 48-hour
+  creatinine-defined acute kidney injury. The locked primary analysis (v1.0)
+  harmonised the MOVER (United States) and VitalDB (South Korea) databases to
+  test whether concentrating 20 minutes of hypotension into one episode carries
+  greater risk than distributing the same duration across four episodes. The
+  v2.0 post hoc analyses add a third cohort (INSPIRE, charted approximately
+  every 5 minutes) and a resampling control in which the two waveform cohorts
+  were reduced to 5-minute sampling, and show that the direction of the
+  cumulative-duration association depends on the temporal resolution of the
+  pressure data. No patient-level data are included.
 authors:
   - family-names: Li
     given-names: Juan
@@ -19,7 +24,7 @@ authors:
     given-names: Fuyang
   - family-names: Yang
     given-names: Lu
-version: 1.0.0
-date-released: 2026-09-24
+version: 2.0.0
+date-released: 2026-10-02
 license: MIT
 type: software

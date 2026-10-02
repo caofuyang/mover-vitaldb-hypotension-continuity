@@ -1,0 +1,134 @@
+{
+  "cohort": "MOVER+VitalDB downsampled to 5-min charting (zero-order hold)",
+  "n": 2956,
+  "events": 200,
+  "corr_total_vs_excess5": 0.939,
+  "ladder": [
+    {
+      "step": "M0_duration",
+      "n": 2956,
+      "total_low10": {
+        "OR": 0.926,
+        "lo": 0.899,
+        "hi": 0.953,
+        "p": 0.0
+      },
+      "mean_depth5": null,
+      "anesthesia_hours": null,
+      "excess5_10": null
+    },
+    {
+      "step": "M1_+center",
+      "n": 2956,
+      "total_low10": {
+        "OR": 0.951,
+        "lo": 0.923,
+        "hi": 0.98,
+        "p": 0.001
+      },
+      "mean_depth5": null,
+      "anesthesia_hours": null,
+      "excess5_10": null
+    },
+    {
+      "step": "M2_+demog",
+      "n": 2956,
+      "total_low10": {
+        "OR": 0.959,
+        "lo": 0.928,
+        "hi": 0.99,
+        "p": 0.011
+      },
+      "mean_depth5": null,
+      "anesthesia_hours": null,
+      "excess5_10": null
+    },
+    {
+      "step": "M3_+depth",
+      "n": 2956,
+      "total_low10": {
+        "OR": 0.96,
+        "lo": 0.929,
+        "hi": 0.992,
+        "p": 0.0137
+      },
+      "mean_depth5": {
+        "OR": 0.972,
+        "lo": 0.884,
+        "hi": 1.069,
+        "p": 0.5579
+      },
+      "anesthesia_hours": null,
+      "excess5_10": null
+    },
+    {
+      "step": "M4_+anesthesia",
+      "n": 2956,
+      "total_low10": {
+        "OR": 0.985,
+        "lo": 0.953,
+        "hi": 1.018,
+        "p": 0.3719
+      },
+      "mean_depth5": null,
+      "anesthesia_hours": {
+        "OR": 0.874,
+        "lo": 0.823,
+        "hi": 0.928,
+        "p": 0.0
+      },
+      "excess5_10": null
+    },
+    {
+      "step": "M5_+anesth+depth",
+      "n": 2956,
+      "total_low10": {
+        "OR": 0.986,
+        "lo": 0.954,
+        "hi": 1.02,
+        "p": 0.413
+      },
+      "mean_depth5": {
+        "OR": 0.968,
+        "lo": 0.879,
+        "hi": 1.066,
+        "p": 0.5059
+      },
+      "anesthesia_hours": {
+        "OR": 0.874,
+        "lo": 0.823,
+        "hi": 0.928,
+        "p": 0.0
+      },
+      "excess5_10": null
+    },
+    {
+      "step": "M6_+pattern",
+      "n": 2956,
+      "total_low10": {
+        "OR": 0.975,
+        "lo": 0.866,
+        "hi": 1.097,
+        "p": 0.6739
+      },
+      "mean_depth5": {
+        "OR": 0.968,
+        "lo": 0.878,
+        "hi": 1.066,
+        "p": 0.5047
+      },
+      "anesthesia_hours": {
+        "OR": 0.875,
+        "lo": 0.823,
+        "hi": 0.931,
+        "p": 0.0
+      },
+      "excess5_10": {
+        "OR": 1.016,
+        "lo": 0.875,
+        "hi": 1.181,
+        "p": 0.8345
+      }
+    }
+  ]
+}
