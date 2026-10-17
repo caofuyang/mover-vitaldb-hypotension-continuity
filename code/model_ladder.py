@@ -10,19 +10,22 @@ logistic models, with and without the near-collinear episode-pattern term.
 Usage
 -----
 # pooled waveform cohorts (has a centre column)
-python code/model_ladder.py --cohort mov1min \
-    --input expected_results/../../COMBINED_FEATURES_V4.csv \
+python code/model_ladder.py --input COMBINED_FEATURES_V4.csv \
     --low-column total_low_minutes --center --out model_ladder_1min.json
 
-# resampled 5-minute cohort
-python code/model_ladder.py --cohort ds5min \
-    --input downsampled_5min_features.csv \
-    --low-column ds_total --center --out model_ladder_5min.json
+# resampled 5-minute cohort (note the different depth and pattern columns)
+python code/model_ladder.py --input downsampled_5min_features.csv \
+    --low-column ds_total --depth-column ds_depth --excess5-column ds_excess5 \
+    --center --out model_ladder_5min.json
 
 # INSPIRE charted cohort (single centre)
-python code/model_ladder.py --cohort inspire \
-    --input INSPIRE_FEATURES_HOLD.csv \
+python code/model_ladder.py --input INSPIRE_FEATURES_HOLD.csv \
     --low-column total_low_minutes --out model_ladder_inspire.json
+
+The outcome is encoded explicitly as 0/1 before fitting. Passing a boolean or
+object-dtype outcome to the formula interface makes statsmodels treat it as a
+two-level categorical variable and fit the complement of the event, which
+inverts every odds ratio.
 """
 from __future__ import annotations
 
@@ -52,7 +55,7 @@ def prepare(frame: pd.DataFrame, low_column: str, has_center: bool) -> pd.DataFr
                       .map({"m": "Male", "f": "Female"}).fillna("Unknown"))
     d["asa_group"] = pd.to_numeric(d.asa, errors="coerce").round().astype("Int64").astype(str)
     d["surgical_category"] = d.surgical_category.fillna("unmapped").astype(str)
-    d["early_aki_48h"] = pd.to_numeric(d.early_aki_48h, errors="coerce")
+    d["early_aki_48h"] = d.early_aki_48h.map({True: 1, False: 0, "True": 1, "False": 0, "true": 1, "false": 0}).astype(int)
     if has_center:
         d["center"] = d.center.astype(str)
     return d

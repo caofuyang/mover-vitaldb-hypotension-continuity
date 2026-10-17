@@ -41,7 +41,7 @@ def prepare(frame: pd.DataFrame, low_column: str) -> pd.DataFrame:
                       .map({"m": "Male", "f": "Female"}).fillna("Unknown"))
     d["asa_group"] = pd.to_numeric(d.asa, errors="coerce").round().astype("Int64").astype(str)
     d["surgical_category"] = d.surgical_category.fillna("unmapped").astype(str)
-    d["early_aki_48h"] = pd.to_numeric(d.early_aki_48h, errors="coerce")
+    d["early_aki_48h"] = d.early_aki_48h.map({True: 1, False: 0, "True": 1, "False": 0, "true": 1, "false": 0}).astype(int)
     if "center" in d.columns:
         d["center"] = d.center.astype(str)
     return d
