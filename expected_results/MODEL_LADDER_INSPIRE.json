@@ -1,17 +1,16 @@
 {
-  "cohort": "INSPIRE (zero-order-hold, ~5-min charted MAP)",
-  "observed_n": 23050,
+  "note": "Post hoc / exploratory model ladder. Not part of the locked analysis contract.",
+  "n": 23050,
   "events": 1214,
-  "corr_total_low_vs_excess5": 0.967,
-  "corr_total_low_vs_anesthesia": 0.433,
+  "corr_total_vs_excess5": 0.967,
   "ladder": [
     {
-      "step": "M0_duration_only",
+      "step": "M0_duration",
       "n": 23050,
       "total_low10": {
-        "OR": 0.962,
-        "lo": 0.953,
-        "hi": 0.972,
+        "OR": 1.039,
+        "lo": 1.029,
+        "hi": 1.05,
         "p": 0.0
       },
       "mean_depth5": null,
@@ -19,30 +18,30 @@
       "excess5_10": null
     },
     {
-      "step": "M1_+depth",
+      "step": "M1_plus_depth",
       "n": 23050,
       "total_low10": {
-        "OR": 0.963,
-        "lo": 0.954,
-        "hi": 0.973,
+        "OR": 1.038,
+        "lo": 1.028,
+        "hi": 1.049,
         "p": 0.0
       },
       "mean_depth5": {
-        "OR": 1.023,
-        "lo": 1.002,
-        "hi": 1.044,
+        "OR": 0.978,
+        "lo": 0.958,
+        "hi": 0.998,
         "p": 0.0349
       },
       "anesthesia_hours": null,
       "excess5_10": null
     },
     {
-      "step": "M2_+demog",
+      "step": "M2_plus_covariates",
       "n": 23050,
       "total_low10": {
-        "OR": 0.948,
-        "lo": 0.938,
-        "hi": 0.958,
+        "OR": 1.055,
+        "lo": 1.044,
+        "hi": 1.067,
         "p": 0.0
       },
       "mean_depth5": null,
@@ -50,89 +49,89 @@
       "excess5_10": null
     },
     {
-      "step": "M3_+demog+depth",
+      "step": "M3_plus_depth_covariates",
       "n": 23050,
       "total_low10": {
-        "OR": 0.948,
-        "lo": 0.938,
-        "hi": 0.959,
+        "OR": 1.054,
+        "lo": 1.043,
+        "hi": 1.066,
         "p": 0.0
       },
       "mean_depth5": {
-        "OR": 1.01,
-        "lo": 0.987,
-        "hi": 1.033,
+        "OR": 0.99,
+        "lo": 0.968,
+        "hi": 1.013,
         "p": 0.3988
       },
       "anesthesia_hours": null,
       "excess5_10": null
     },
     {
-      "step": "M4_+anesthesia",
+      "step": "M4_plus_anesthesia",
       "n": 23050,
       "total_low10": {
-        "OR": 0.972,
-        "lo": 0.96,
-        "hi": 0.985,
+        "OR": 1.029,
+        "lo": 1.016,
+        "hi": 1.042,
         "p": 0.0
       },
       "mean_depth5": null,
       "anesthesia_hours": {
-        "OR": 0.88,
-        "lo": 0.853,
-        "hi": 0.907,
+        "OR": 1.137,
+        "lo": 1.102,
+        "hi": 1.172,
         "p": 0.0
       },
       "excess5_10": null
     },
     {
-      "step": "M5_+anesthesia+depth",
+      "step": "M5_plus_anesthesia_depth",
       "n": 23050,
       "total_low10": {
-        "OR": 0.972,
-        "lo": 0.96,
-        "hi": 0.985,
+        "OR": 1.029,
+        "lo": 1.015,
+        "hi": 1.042,
         "p": 0.0
       },
       "mean_depth5": {
-        "OR": 1.006,
-        "lo": 0.983,
-        "hi": 1.029,
+        "OR": 0.994,
+        "lo": 0.972,
+        "hi": 1.017,
         "p": 0.6308
       },
       "anesthesia_hours": {
-        "OR": 0.88,
-        "lo": 0.854,
-        "hi": 0.908,
+        "OR": 1.136,
+        "lo": 1.102,
+        "hi": 1.172,
         "p": 0.0
       },
       "excess5_10": null
     },
     {
-      "step": "M6_+pattern(primary)",
+      "step": "M6_plus_pattern_term",
       "n": 23050,
       "total_low10": {
-        "OR": 0.986,
-        "lo": 0.936,
-        "hi": 1.038,
+        "OR": 1.015,
+        "lo": 0.963,
+        "hi": 1.069,
         "p": 0.5861
       },
       "mean_depth5": {
-        "OR": 1.006,
-        "lo": 0.984,
-        "hi": 1.029,
+        "OR": 0.994,
+        "lo": 0.972,
+        "hi": 1.017,
         "p": 0.6031
       },
       "anesthesia_hours": {
-        "OR": 0.878,
-        "lo": 0.85,
-        "hi": 0.906,
+        "OR": 1.139,
+        "lo": 1.103,
+        "hi": 1.177,
         "p": 0.0
       },
       "excess5_10": {
-        "OR": 0.983,
-        "lo": 0.922,
-        "hi": 1.047,
+        "OR": 1.018,
+        "lo": 0.955,
+        "hi": 1.084,
         "p": 0.5922
       }
     }

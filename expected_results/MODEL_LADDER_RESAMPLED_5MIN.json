@@ -1,0 +1,139 @@
+{
+  "note": "Post hoc / exploratory model ladder. Not part of the locked analysis contract.",
+  "n": 2956,
+  "events": 200,
+  "corr_total_vs_excess5": 0.939,
+  "ladder": [
+    {
+      "step": "M0_duration",
+      "n": 2956,
+      "total_low10": {
+        "OR": 1.08,
+        "lo": 1.05,
+        "hi": 1.112,
+        "p": 0.0
+      },
+      "mean_depth5": null,
+      "anesthesia_hours": null,
+      "excess5_10": null
+    },
+    {
+      "step": "M1_plus_depth",
+      "n": 2956,
+      "total_low10": {
+        "OR": 1.08,
+        "lo": 1.049,
+        "hi": 1.111,
+        "p": 0.0
+      },
+      "mean_depth5": {
+        "OR": 1.025,
+        "lo": 0.945,
+        "hi": 1.111,
+        "p": 0.5569
+      },
+      "anesthesia_hours": null,
+      "excess5_10": null
+    },
+    {
+      "step": "M2_plus_covariates",
+      "n": 2956,
+      "total_low10": {
+        "OR": 1.043,
+        "lo": 1.01,
+        "hi": 1.078,
+        "p": 0.011
+      },
+      "mean_depth5": null,
+      "anesthesia_hours": null,
+      "excess5_10": null
+    },
+    {
+      "step": "M3_plus_depth_covariates",
+      "n": 2956,
+      "total_low10": {
+        "OR": 1.042,
+        "lo": 1.008,
+        "hi": 1.077,
+        "p": 0.0137
+      },
+      "mean_depth5": {
+        "OR": 1.029,
+        "lo": 0.935,
+        "hi": 1.132,
+        "p": 0.5579
+      },
+      "anesthesia_hours": null,
+      "excess5_10": null
+    },
+    {
+      "step": "M4_plus_anesthesia",
+      "n": 2956,
+      "total_low10": {
+        "OR": 1.015,
+        "lo": 0.982,
+        "hi": 1.05,
+        "p": 0.3719
+      },
+      "mean_depth5": null,
+      "anesthesia_hours": {
+        "OR": 1.144,
+        "lo": 1.077,
+        "hi": 1.215,
+        "p": 0.0
+      },
+      "excess5_10": null
+    },
+    {
+      "step": "M5_plus_anesthesia_depth",
+      "n": 2956,
+      "total_low10": {
+        "OR": 1.014,
+        "lo": 0.981,
+        "hi": 1.049,
+        "p": 0.413
+      },
+      "mean_depth5": {
+        "OR": 1.033,
+        "lo": 0.938,
+        "hi": 1.138,
+        "p": 0.5059
+      },
+      "anesthesia_hours": {
+        "OR": 1.145,
+        "lo": 1.078,
+        "hi": 1.216,
+        "p": 0.0
+      },
+      "excess5_10": null
+    },
+    {
+      "step": "M6_plus_pattern_term",
+      "n": 2956,
+      "total_low10": {
+        "OR": 1.026,
+        "lo": 0.911,
+        "hi": 1.155,
+        "p": 0.6739
+      },
+      "mean_depth5": {
+        "OR": 1.033,
+        "lo": 0.938,
+        "hi": 1.138,
+        "p": 0.5047
+      },
+      "anesthesia_hours": {
+        "OR": 1.142,
+        "lo": 1.074,
+        "hi": 1.215,
+        "p": 0.0
+      },
+      "excess5_10": {
+        "OR": 0.984,
+        "lo": 0.847,
+        "hi": 1.143,
+        "p": 0.8345
+      }
+    }
+  ]
+}
