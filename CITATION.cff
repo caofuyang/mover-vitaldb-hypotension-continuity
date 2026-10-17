@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this code or the archived aggregate results, please cite the manuscript and this release."
-title: "Blood-pressure sampling resolution and the intraoperative hypotension-acute kidney injury association (MOVER, VitalDB and INSPIRE)"
+title: "Intraoperative hypotension and acute kidney injury across three perioperative databases (MOVER, VitalDB and INSPIRE)"
 abstract: >-
   Analysis code, locked analysis contract and aggregate expected results for a
   multi-database study of intraoperative hypotension and 48-hour
@@ -8,11 +8,13 @@ abstract: >-
   harmonised the MOVER (United States) and VitalDB (South Korea) databases to
   test whether concentrating 20 minutes of hypotension into one episode carries
   greater risk than distributing the same duration across four episodes. The
-  v2.0 post hoc analyses add a third cohort (INSPIRE, charted approximately
-  every 5 minutes) and a resampling control in which the two waveform cohorts
-  were reduced to 5-minute sampling, and show that the direction of the
-  cumulative-duration association depends on the temporal resolution of the
-  pressure data. No patient-level data are included.
+  v2.x post hoc analyses add a third cohort (INSPIRE, charted approximately
+  every 5 minutes), a resampling control in which the two waveform cohorts were
+  reduced to 5-minute sampling, absolute-risk estimates standardized to each
+  cohort, and a spline description of the shape of the association. Version
+  2.0.1 corrects an outcome-encoding error in 2.0.0 that inverted the odds
+  ratios for the resampled and INSPIRE cohorts. No patient-level data are
+  included.
 authors:
   - family-names: Li
     given-names: Juan
@@ -24,9 +26,8 @@ authors:
     given-names: Fuyang
   - family-names: Yang
     given-names: Lu
-version: 2.0.0
-date-released: 2026-10-02
+version: 2.0.1
+date-released: 2026-10-17
 license: MIT
+doi: 10.5281/zenodo.22929344
 type: software
-
-doi: 10.5281/zenodo.23101445
