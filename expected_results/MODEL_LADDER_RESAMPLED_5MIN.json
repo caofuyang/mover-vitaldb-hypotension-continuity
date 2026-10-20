@@ -1,12 +1,10 @@
 {
-  "note": "Post hoc / exploratory model ladder. Not part of the locked analysis contract.",
-  "n": 2956,
-  "events": 200,
-  "corr_total_vs_excess5": 0.939,
+  "note": "Post hoc / exploratory. Not part of the locked analysis contract.",
+  "cohort": "downsampled_5min_features.csv",
   "ladder": [
     {
-      "step": "M0_duration",
-      "n": 2956,
+      "step": "Duration alone",
+      "n": 2958,
       "total_low10": {
         "OR": 1.08,
         "lo": 1.05,
@@ -18,62 +16,39 @@
       "excess5_10": null
     },
     {
-      "step": "M1_plus_depth",
-      "n": 2956,
+      "step": "+ center",
+      "n": 2958,
       "total_low10": {
-        "OR": 1.08,
-        "lo": 1.049,
-        "hi": 1.111,
-        "p": 0.0
-      },
-      "mean_depth5": {
-        "OR": 1.025,
-        "lo": 0.945,
-        "hi": 1.111,
-        "p": 0.5569
-      },
-      "anesthesia_hours": null,
-      "excess5_10": null
-    },
-    {
-      "step": "M2_plus_covariates",
-      "n": 2956,
-      "total_low10": {
-        "OR": 1.043,
-        "lo": 1.01,
-        "hi": 1.078,
-        "p": 0.011
+        "OR": 1.052,
+        "lo": 1.021,
+        "hi": 1.084,
+        "p": 0.001
       },
       "mean_depth5": null,
       "anesthesia_hours": null,
       "excess5_10": null
     },
     {
-      "step": "M3_plus_depth_covariates",
-      "n": 2956,
+      "step": "+ demographic and surgical covariates",
+      "n": 2958,
       "total_low10": {
-        "OR": 1.042,
-        "lo": 1.008,
-        "hi": 1.077,
-        "p": 0.0137
+        "OR": 1.043,
+        "lo": 1.01,
+        "hi": 1.078,
+        "p": 0.0108
       },
-      "mean_depth5": {
-        "OR": 1.029,
-        "lo": 0.935,
-        "hi": 1.132,
-        "p": 0.5579
-      },
+      "mean_depth5": null,
       "anesthesia_hours": null,
       "excess5_10": null
     },
     {
-      "step": "M4_plus_anesthesia",
-      "n": 2956,
+      "step": "+ anesthesia duration",
+      "n": 2958,
       "total_low10": {
         "OR": 1.015,
         "lo": 0.982,
         "hi": 1.05,
-        "p": 0.3719
+        "p": 0.3691
       },
       "mean_depth5": null,
       "anesthesia_hours": {
@@ -85,19 +60,19 @@
       "excess5_10": null
     },
     {
-      "step": "M5_plus_anesthesia_depth",
-      "n": 2956,
+      "step": "+ mean depth",
+      "n": 2958,
       "total_low10": {
         "OR": 1.014,
         "lo": 0.981,
         "hi": 1.049,
-        "p": 0.413
+        "p": 0.4108
       },
       "mean_depth5": {
-        "OR": 1.033,
-        "lo": 0.938,
+        "OR": 1.034,
+        "lo": 0.939,
         "hi": 1.138,
-        "p": 0.5059
+        "p": 0.4984
       },
       "anesthesia_hours": {
         "OR": 1.145,
@@ -108,19 +83,19 @@
       "excess5_10": null
     },
     {
-      "step": "M6_plus_pattern_term",
-      "n": 2956,
+      "step": "+ episode-pattern term",
+      "n": 2958,
       "total_low10": {
         "OR": 1.026,
-        "lo": 0.911,
+        "lo": 0.912,
         "hi": 1.155,
-        "p": 0.6739
+        "p": 0.6674
       },
       "mean_depth5": {
-        "OR": 1.033,
-        "lo": 0.938,
-        "hi": 1.138,
-        "p": 0.5047
+        "OR": 1.034,
+        "lo": 0.939,
+        "hi": 1.139,
+        "p": 0.4971
       },
       "anesthesia_hours": {
         "OR": 1.142,
@@ -132,8 +107,50 @@
         "OR": 0.984,
         "lo": 0.847,
         "hi": 1.143,
-        "p": 0.8345
+        "p": 0.8279
       }
     }
-  ]
+  ],
+  "pattern_per10": {
+    "OR": 0.984,
+    "lo": 0.847,
+    "hi": 1.143,
+    "p": 0.8279
+  },
+  "pattern_15min_scenario": {
+    "OR": 0.975,
+    "lo": 0.779,
+    "hi": 1.221,
+    "p": 0.8279
+  },
+  "pattern_lr": {
+    "stat": 0.046,
+    "df": 1,
+    "p": 0.83
+  },
+  "n": 2958,
+  "events": 200,
+  "corr_total_vs_excess5": 0.939,
+  "pattern_by_centre": {
+    "MOVER": {
+      "n": 1137,
+      "events": 132,
+      "pattern_15min_scenario": {
+        "OR": 0.955,
+        "lo": 0.745,
+        "hi": 1.225,
+        "p": 0.7177
+      }
+    },
+    "VitalDB": {
+      "n": 1821,
+      "events": 68,
+      "pattern_15min_scenario": {
+        "OR": 1.041,
+        "lo": 0.671,
+        "hi": 1.615,
+        "p": 0.8586
+      }
+    }
+  }
 }

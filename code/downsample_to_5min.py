@@ -1,12 +1,14 @@
-"""Resolution control: resample the MOVER/VitalDB pressure grid to 5-minute charting.
+"""Resolution control, v2: resample the MOVER/VitalDB 1-minute grid to 5-minute charting.
 
-Post hoc and exploratory: this script is NOT part of the locked analysis
-contract in config/ANALYSIS_CONTRACT_v4.yaml.
-
-Patients, covariates and outcomes are held fixed; only the temporal resolution
-of the exposure changes. The 1-minute mean arterial pressure grid used by the
-locked pipeline is subsampled to every fifth minute and summarized with the same
-zero-order-hold logic applied to INSPIRE, so the two can be compared directly.
+Changes from v1 (2026-10-18)
+----------------------------
+1. The last sampled reading now carries forward for one 5-minute step or to the
+   end of anaesthesia, whichever comes first. v1 ended the last interval at
+   ``last_minute + 5``, which could extend past the end of anaesthesia by up to
+   5 minutes.
+2. A case is kept when it has at least one valid sampled reading. v1 required
+   five, which silently dropped two VitalDB cases that had only a short run of
+   arterial pressure, so the resampled cohort was 2,956 rather than 2,958.
 
 Usage
 -----
@@ -49,15 +51,20 @@ def grid_1min(time_seconds, value, anesthesia_minutes: float) -> np.ndarray:
     return grid
 
 
-def downsample_hold(grid: np.ndarray, step: int = STEP_MINUTES):
-    """Keep every `step`-th minute, then carry each value forward."""
+def downsample_hold(grid: np.ndarray, anesthesia_minutes: float, step: int = STEP_MINUTES):
+    """Keep every `step`-th minute, then carry each value forward one step.
+
+    The final interval stops at the end of anaesthesia, so the exposure window
+    never runs past the observation window."""
     minutes = np.arange(0, len(grid), step)
     values = grid[minutes]
     ok = np.isfinite(values)
     minutes, values = minutes[ok], values[ok]
-    if len(minutes) < 5:
+    if len(minutes) == 0:
         return None
-    ends = np.append(minutes[1:], minutes[-1] + step)
+    ends = np.append(minutes[1:], minutes[-1] + step).astype(float)
+    ends = np.minimum(ends, float(anesthesia_minutes))
+    ends = np.maximum(ends, minutes)  # guard against rounding at the very end
     duration = (ends - minutes).astype(float)
     low = values < 65.0
     total_low = float(duration[low].sum())
@@ -93,7 +100,7 @@ def mover_frame(features: Path, mov_map: Path) -> pd.DataFrame:
         am = float(anesthesia.get(case, np.nan))
         if not np.isfinite(am):
             continue
-        feat = downsample_hold(grid_1min(g.time_seconds.values, g.map_value.values, am))
+        feat = downsample_hold(grid_1min(g.time_seconds.values, g.map_value.values, am), am)
         if feat:
             feat["export_case"] = case
             rows.append(feat)
@@ -127,7 +134,7 @@ def vitaldb_frame(features: Path, cases: Path, map_dir: Path, manifest: Path) ->
         t = pd.to_numeric(raw.iloc[:, 0], errors="coerce") - float(anestart.get(cid, np.nan))
         feat = downsample_hold(
             grid_1min(t.values, pd.to_numeric(raw.iloc[:, 1], errors="coerce").values,
-                      float(r.anesthesia_minutes)))
+                      float(r.anesthesia_minutes)), float(r.anesthesia_minutes))
         if feat:
             feat["vital_case"] = cid
             rows.append(feat)

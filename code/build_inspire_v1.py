@@ -72,12 +72,23 @@ def classify_pcs(code, cpb_present: bool) -> str:
     return "unmapped"
 
 
-def hold_features(times: np.ndarray, values: np.ndarray, anstart: float, anend: float):
-    """Zero-order hold: each reading covers the interval up to the next reading."""
-    order = np.argsort(times)
-    t, v = times[order], values[order]
-    keep = (t >= anstart) & (t <= anend)
-    t, v = t[keep], v[keep]
+def hold_features(times: np.ndarray, values: np.ndarray, anstart: float, anend: float,
+                  lo: float = 20.0, hi: float = 160.0):
+    """Zero-order hold: each reading covers the interval up to the next reading.
+
+    Readings outside the same 20-160 mmHg validity window used for the waveform
+    cohorts are discarded. Without this filter, charted values as low as 6 mmHg
+    (arterial-line artefacts) were counted as severe hypotension; 61,545 of
+    2,355,456 INSPIRE art_mbp readings in the analytic cohort were below
+    20 mmHg, affecting 41.7% of operations.
+    """
+    t = np.asarray(times, dtype=float)
+    v = np.asarray(values, dtype=float)
+    ok = (np.isfinite(t) & np.isfinite(v) & (t >= anstart) & (t <= anend)
+          & (v >= lo) & (v <= hi))
+    t, v = t[ok], v[ok]
+    order = np.argsort(t)
+    t, v = t[order], v[order]
     if len(t) == 0:
         return None
     ends = np.append(t[1:], anend)

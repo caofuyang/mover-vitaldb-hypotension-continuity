@@ -1,0 +1,18 @@
+{
+  "readings": 1170908,
+  "intervals": 1127121,
+  "interval_minutes": {
+    "median": 5.0,
+    "p75": 5.0,
+    "p90": 5.0,
+    "p95": 5.0,
+    "p99": 5.0,
+    "max": 330.0
+  },
+  "intervals_over_15_min": 141,
+  "intervals_over_30_min": 33,
+  "share_of_intervals_at_most_10_min": 0.999246,
+  "share_of_intervals_over_15_min": 0.0001251,
+  "share_of_held_time_in_intervals_over_15_min": 0.00080141,
+  "share_of_held_time_in_intervals_over_30_min": 0.00037112
+}

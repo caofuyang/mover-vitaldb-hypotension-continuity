@@ -12,9 +12,17 @@ abstract: >-
   every 5 minutes), a resampling control in which the two waveform cohorts were
   reduced to 5-minute sampling, absolute-risk estimates standardized to each
   cohort, and a spline description of the shape of the association. Version
-  2.0.1 corrects an outcome-encoding error in 2.0.0 that inverted the odds
-  ratios for the resampled and INSPIRE cohorts. No patient-level data are
-  included.
+  2.0.1 corrected an outcome-encoding error in 2.0.0 that inverted the odds
+  ratios for the resampled and INSPIRE cohorts. Version 2.0.2 applies the
+  waveform validity filter (20-160 mmHg) to the INSPIRE exposure and rebuilds
+  cohort membership after that filter, so the analytic cohort meets the stated
+  first and last reading rule (26,532 patients; 22,125 with an outcome and
+  1,184 events); it also stops the 5-minute resampling at the end of
+  anaesthesia, breaks capped low-pressure episodes at uncovered intervals,
+  reports standardized risks at the fitted coefficients with intervals from
+  coefficient draws, derives the figure axis from the data, and generates every
+  manuscript table from the feature tables and result files. No patient-level
+  data are included.
 authors:
   - family-names: Li
     given-names: Juan
@@ -26,8 +34,8 @@ authors:
     given-names: Fuyang
   - family-names: Yang
     given-names: Lu
-version: 2.0.1
-date-released: 2026-10-17
+version: 2.0.2
+date-released: 2026-10-19
 license: MIT
 doi: 10.5281/zenodo.22929344
 type: software

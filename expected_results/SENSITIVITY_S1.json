@@ -1,0 +1,69 @@
+{
+  "note": "Prespecified sensitivity analyses of the episode-pattern contrast in the pooled MOVER + VitalDB waveform cohort. Rows were read from SENSITIVITY_S1_SOURCE_V4_1.json, the archived sensitivity model report of the locked v1.0 analysis; the source file is included in this directory and its SHA-256 is recorded below. Values are kept at full precision and formatted in the table.",
+  "source_file": "expected_results/SENSITIVITY_S1_SOURCE_V4_1.json",
+  "source_sha256": "603481f2d5db8e480328c14faa02e4a99f1343330b8e89a9d3edfb0d6ee51561",
+  "source_contract_sha256": {
+    "combined_features": "0bd96f2fe98c02f74230f52f010cee2b51102a6532c2d1f53b19e2d53e46996b",
+    "sensitivity_features": "dfcb094bb8a545e3f42633e7335023677b3ad6b757517c050b2155d63b82b36c",
+    "analysis_lock_manifest": "9da729cbbfe5fe4519567163622ddb1c0c7b2d2e82f481ab3c37941b47dc02a8"
+  },
+  "cohort": "MOVER + VitalDB, 1-minute",
+  "rows": [
+    {
+      "analysis": "threshold_60",
+      "n": 2958,
+      "events": 200,
+      "odds_ratio": 0.8989121054096646,
+      "ci": [
+        0.6201874771066523,
+        1.3029011437344429
+      ],
+      "lr_p": 0.5864213706712479
+    },
+    {
+      "analysis": "threshold_70",
+      "n": 2958,
+      "events": 200,
+      "odds_ratio": 1.13582863740081,
+      "ci": [
+        0.9872967655273337,
+        1.3067060873543028
+      ],
+      "lr_p": 0.08231816186087863
+    },
+    {
+      "analysis": "bridge_one_missing_minute",
+      "n": 2958,
+      "events": 200,
+      "odds_ratio": 1.0728476793510264,
+      "ci": [
+        0.8780134732548636,
+        1.310916265125214
+      ],
+      "lr_p": 0.50853217190581
+    },
+    {
+      "analysis": "hinge_10_minutes",
+      "n": 2958,
+      "events": 200,
+      "odds_ratio": 1.0072857318561577,
+      "ci": [
+        0.8839802550342678,
+        1.1477909600612775
+      ],
+      "lr_p": 0.9172984704360756
+    },
+    {
+      "analysis": "vitaldb_10_second",
+      "n": 1802,
+      "events": 68,
+      "odds_ratio": 0.7727314244408089,
+      "ci": [
+        0.5146335816435715,
+        1.160269900015726
+      ],
+      "lr_p": 0.2560783105373591
+    }
+  ],
+  "flame_note": "The prespecified flexible accumulation model (FLAME) retained one effective degree of freedom at basis dimensions 5 and 6 (chi-square 1.99, P=0.158) and therefore collapsed towards a linear duration effect, which makes the scenario contrast null by construction. A two-hinge specification produced hinges with opposing coefficients that were not separately identifiable. All sensitivity models converged without separation."
+}

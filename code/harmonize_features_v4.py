@@ -35,14 +35,6 @@ def nullable_binary(value: pd.Series) -> pd.Series:
     return numeric
 
 
-def normalized_yes_no(value: pd.Series) -> pd.Series:
-    text = value.fillna("Unknown").astype(str).str.strip().str.lower()
-    return text.map(
-        lambda item: "Yes" if item in {"yes", "y", "true", "1"}
-        else ("No" if item in {"no", "n", "false", "0"} else "Unknown")
-    )
-
-
 def prepare_mover(path: Path) -> pd.DataFrame:
     data = pd.read_csv(path)
     data["center"] = "MOVER"
@@ -78,7 +70,6 @@ def harmonize(mover_csv: Path, vital_csv: Path, out_dir: Path) -> dict:
     combined["common_surgical_support"] = bool_series(combined.common_surgical_support)
     combined["any_hypotension"] = pd.to_numeric(combined.any_hypotension, errors="coerce").fillna(0).astype(int)
     combined["early_aki_48h"] = nullable_binary(combined.early_aki_48h)
-    combined["icu_flag"] = normalized_yes_no(combined.icu_flag)
 
     consistency = {
         "duplicate_case_ids": int(combined.analysis_case.duplicated().sum()),

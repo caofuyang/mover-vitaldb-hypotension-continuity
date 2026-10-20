@@ -1,7 +1,7 @@
 project: episode_duration_risk_accumulation_noncardiac_aki
-version: '4.1'
+version: '4.0'
 date: '2026-09-23'
-status: locked_ready_for_final_v4_1_model_after_documented_technical_amendment
+status: analysis_pipeline_tested_waiting_for_mover_v5_paired_scale_validation
 
 scientific_position:
   type: two_center_cross_country_confirmatory_association_and_transportability
@@ -48,11 +48,6 @@ map_processing:
     minimum_correlation: 0.50
     maximum_median_absolute_difference_mmhg: 15
     median_ratio_range_invasive_to_nibp: [0.80, 1.20]
-    observed_valid_pairs: 241132
-    observed_correlation: 0.5552512708328281
-    observed_median_absolute_difference_mmhg: 8.0
-    observed_median_ratio_invasive_to_nibp: 0.9625
-    gate_passed: true
   interval: anesthesia_start_inclusive_to_anesthesia_end_exclusive
   bin_seconds: 60
   bin_summary: median
@@ -106,13 +101,6 @@ primary_model:
     - separation_or_quasi_separation
     - maximum_absolute_coefficient_greater_than_10
     - nonconvergence_after_100_iterations
-  stability_analysis:
-    method: nonparametric_patient_bootstrap_stratified_by_center
-    repetitions: 500
-    seed: 20260923
-    target: primary_20_minute_vs_four_5_minute_scenario_odds_ratio
-    interval: percentile_95_percent
-    instability_flag: fewer_than_450_valid_bootstrap_fits
 
 primary_contrast:
   total_hypotension_minutes: 20
@@ -133,7 +121,6 @@ cross_center_assessment:
   center_by_duration_pattern_interaction: secondary_estimate_with_interval
   do_not_require_each_center_p_below_0_05: true
   pooled_common_effect_requires_directional_compatibility_review: true
-  site_specific_interpretation: secondary_estimation_with_confidence_intervals_not_required_to_be_statistically_significant
   common_support_categories:
     - abdominal
     - thoracic
@@ -146,8 +133,6 @@ flexible_flame_analysis:
   package: flameRisk
   package_source: https://github.com/xinkai-zhou/flameRisk
   package_status: development_not_CRAN
-  exact_commit_sha: 85a6d1b81dcbdd1f45b488d13567cbc5577649bc
-  commit_pinned_date: '2026-09-23'
   exact_commit_sha_required_before_analysis: true
   constraints: [f_0_equals_0, monotone_nondecreasing]
   reason_not_primary: limited_center_specific_event_counts_and_undercoverage_risk_for_complex_shapes
@@ -156,7 +141,7 @@ selection_bias:
   compare_postop_creatinine_observed_vs_missing: required
   observation_probability_model: required
   inverse_probability_observation_weighting: sensitivity
-  current_mover_export_sufficient: true
+  current_mover_export_sufficient: false
   primary_complete_outcome_analysis: unweighted
   sensitivity: stabilized_inverse_probability_of_observation_weighting
   probability_clip: [0.05, 0.95]
@@ -190,22 +175,3 @@ reporting:
   no_causal_language: true
   no_complete_kdigo_claim: true
   no_significance_based_definition_selection: true
-
-locked_design_evidence:
-  combined_parent_rows: 3138
-  combined_outcome_observed_rows: 2958
-  combined_aki_events: 200
-  center_counts:
-    mover: {parent_rows: 1178, outcome_observed_rows: 1137, aki_events: 132, longest_episode_gte_20: 140}
-    vitaldb: {parent_rows: 1960, outcome_observed_rows: 1821, aki_events: 68, longest_episode_gte_20: 88}
-  pooled_synthetic_power_for_or_1_3: 0.757
-  pooled_synthetic_power_for_or_1_5: 0.9699849924962481
-  simulation_uses_observed_exposure_patterns_and_synthetic_outcomes_only: true
-  real_exposure_outcome_model_run_before_initial_v4_lock: false
-  initial_v4_model_run_before_v4_1_amendment: true
-  technical_correction_after_initial_locked_fit_before_final_v4_1_model:
-    issue: icu_flag_used_only_in_observation_probability_sensitivity_was_encoded_as_Y_N_in_vitaldb_and_Yes_No_in_mover
-    correction: harmonized_to_Yes_No_before_refitting_the_observation_probability_model
-    primary_outcome_exposure_and_primary_model_covariates_changed: false
-    initial_pooled_primary_scenario_or: 1.0869586811944927
-    initial_pooled_primary_likelihood_ratio_p: 0.4418126401941287

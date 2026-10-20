@@ -1,14 +1,12 @@
 {
-  "note": "Post hoc / exploratory model ladder. Not part of the locked analysis contract.",
-  "n": 23050,
-  "events": 1214,
-  "corr_total_vs_excess5": 0.967,
+  "note": "Post hoc / exploratory. Not part of the locked analysis contract.",
+  "cohort": "INSPIRE_FEATURES_HOLD.csv",
   "ladder": [
     {
-      "step": "M0_duration",
-      "n": 23050,
+      "step": "Duration alone",
+      "n": 22125,
       "total_low10": {
-        "OR": 1.039,
+        "OR": 1.04,
         "lo": 1.029,
         "hi": 1.05,
         "p": 0.0
@@ -18,122 +16,111 @@
       "excess5_10": null
     },
     {
-      "step": "M1_plus_depth",
-      "n": 23050,
-      "total_low10": {
-        "OR": 1.038,
-        "lo": 1.028,
-        "hi": 1.049,
-        "p": 0.0
-      },
-      "mean_depth5": {
-        "OR": 0.978,
-        "lo": 0.958,
-        "hi": 0.998,
-        "p": 0.0349
-      },
-      "anesthesia_hours": null,
-      "excess5_10": null
+      "step": "+ center",
+      "n": 22125,
+      "total_low10": null
     },
     {
-      "step": "M2_plus_covariates",
-      "n": 23050,
-      "total_low10": {
-        "OR": 1.055,
-        "lo": 1.044,
-        "hi": 1.067,
-        "p": 0.0
-      },
-      "mean_depth5": null,
-      "anesthesia_hours": null,
-      "excess5_10": null
-    },
-    {
-      "step": "M3_plus_depth_covariates",
-      "n": 23050,
+      "step": "+ demographic and surgical covariates",
+      "n": 22125,
       "total_low10": {
         "OR": 1.054,
         "lo": 1.043,
         "hi": 1.066,
         "p": 0.0
       },
-      "mean_depth5": {
-        "OR": 0.99,
-        "lo": 0.968,
-        "hi": 1.013,
-        "p": 0.3988
-      },
+      "mean_depth5": null,
       "anesthesia_hours": null,
       "excess5_10": null
     },
     {
-      "step": "M4_plus_anesthesia",
-      "n": 23050,
+      "step": "+ anesthesia duration",
+      "n": 22125,
       "total_low10": {
-        "OR": 1.029,
-        "lo": 1.016,
-        "hi": 1.042,
+        "OR": 1.028,
+        "lo": 1.014,
+        "hi": 1.041,
         "p": 0.0
       },
       "mean_depth5": null,
       "anesthesia_hours": {
         "OR": 1.137,
         "lo": 1.102,
-        "hi": 1.172,
+        "hi": 1.173,
         "p": 0.0
       },
       "excess5_10": null
     },
     {
-      "step": "M5_plus_anesthesia_depth",
-      "n": 23050,
+      "step": "+ mean depth",
+      "n": 22125,
       "total_low10": {
-        "OR": 1.029,
-        "lo": 1.015,
-        "hi": 1.042,
-        "p": 0.0
+        "OR": 1.025,
+        "lo": 1.012,
+        "hi": 1.039,
+        "p": 0.0002
       },
       "mean_depth5": {
-        "OR": 0.994,
-        "lo": 0.972,
-        "hi": 1.017,
-        "p": 0.6308
+        "OR": 1.093,
+        "lo": 1.005,
+        "hi": 1.189,
+        "p": 0.0381
       },
       "anesthesia_hours": {
-        "OR": 1.136,
-        "lo": 1.102,
-        "hi": 1.172,
+        "OR": 1.142,
+        "lo": 1.107,
+        "hi": 1.178,
         "p": 0.0
       },
       "excess5_10": null
     },
     {
-      "step": "M6_plus_pattern_term",
-      "n": 23050,
+      "step": "+ episode-pattern term",
+      "n": 22125,
       "total_low10": {
-        "OR": 1.015,
-        "lo": 0.963,
-        "hi": 1.069,
-        "p": 0.5861
+        "OR": 1.024,
+        "lo": 0.971,
+        "hi": 1.08,
+        "p": 0.3804
       },
       "mean_depth5": {
-        "OR": 0.994,
-        "lo": 0.972,
-        "hi": 1.017,
-        "p": 0.6031
+        "OR": 1.093,
+        "lo": 1.005,
+        "hi": 1.189,
+        "p": 0.038
       },
       "anesthesia_hours": {
-        "OR": 1.139,
-        "lo": 1.103,
-        "hi": 1.177,
+        "OR": 1.142,
+        "lo": 1.105,
+        "hi": 1.18,
         "p": 0.0
       },
       "excess5_10": {
-        "OR": 1.018,
-        "lo": 0.955,
-        "hi": 1.084,
-        "p": 0.5922
+        "OR": 1.001,
+        "lo": 0.938,
+        "hi": 1.069,
+        "p": 0.9662
       }
     }
-  ]
+  ],
+  "pattern_per10": {
+    "OR": 1.001,
+    "lo": 0.938,
+    "hi": 1.069,
+    "p": 0.9662
+  },
+  "pattern_15min_scenario": {
+    "OR": 1.002,
+    "lo": 0.909,
+    "hi": 1.105,
+    "p": 0.9662
+  },
+  "pattern_lr": {
+    "stat": 0.002,
+    "df": 1,
+    "p": 0.966
+  },
+  "n": 22125,
+  "events": 1184,
+  "corr_total_vs_excess5": 0.966
 }

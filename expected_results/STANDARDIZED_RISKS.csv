@@ -1,4 +1,11 @@
-Cohort,Model,0 min,15 min,30 min,60 min,90 min
-MOVER+VitalDB 1-min,adjusted for age sex ASA eGFR surgical category (+center),6.0% (5.1-7.1),6.5% (5.6-7.5),6.9% (6.1-7.9),7.9% (6.8-9.2),9.1% (7.2-11.1)
-MOVER+VitalDB resampled 5-min,adjusted for age sex ASA eGFR surgical category (+center),6.2% (5.3-7.3),6.6% (5.7-7.5),6.9% (6.0-7.9),7.7% (6.6-8.9),8.6% (7.0-10.4)
-INSPIRE charted ~5-min,adjusted for age sex ASA eGFR surgical category,4.5% (4.2-4.7),4.8% (4.5-5.1),5.1% (4.9-5.4),5.9% (5.6-6.2),6.8% (6.3-7.3)
+cohort,band,n,events,crude,standardised,lo,hi
+pooled_waveform_1min,0,239,14,0.0586,0.0688,0.0418,0.1128
+pooled_waveform_1min,1-15,1490,82,0.055,0.0632,0.052,0.0782
+pooled_waveform_1min,16-30,579,32,0.0553,0.0547,0.0392,0.0742
+pooled_waveform_1min,31-60,381,29,0.0761,0.0591,0.0427,0.0855
+pooled_waveform_1min,>60,269,43,0.1599,0.1147,0.0856,0.1561
+inspire,0,3806,190,0.0499,0.0514,0.0458,0.0595
+inspire,1-15,7786,359,0.0461,0.0444,0.0407,0.0491
+inspire,16-30,4098,183,0.0447,0.0431,0.0373,0.0503
+inspire,31-60,3539,219,0.0619,0.0646,0.057,0.0727
+inspire,>60,2896,233,0.0805,0.085,0.0757,0.0972

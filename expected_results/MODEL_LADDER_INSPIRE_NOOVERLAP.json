@@ -1,0 +1,126 @@
+{
+  "note": "Post hoc / exploratory. Not part of the locked analysis contract.",
+  "cohort": "inspire_v3_nooverlap.csv",
+  "ladder": [
+    {
+      "step": "Duration alone",
+      "n": 21850,
+      "total_low10": {
+        "OR": 1.04,
+        "lo": 1.029,
+        "hi": 1.05,
+        "p": 0.0
+      },
+      "mean_depth5": null,
+      "anesthesia_hours": null,
+      "excess5_10": null
+    },
+    {
+      "step": "+ center",
+      "n": 21850,
+      "total_low10": null
+    },
+    {
+      "step": "+ demographic and surgical covariates",
+      "n": 21850,
+      "total_low10": {
+        "OR": 1.054,
+        "lo": 1.042,
+        "hi": 1.066,
+        "p": 0.0
+      },
+      "mean_depth5": null,
+      "anesthesia_hours": null,
+      "excess5_10": null
+    },
+    {
+      "step": "+ anesthesia duration",
+      "n": 21850,
+      "total_low10": {
+        "OR": 1.028,
+        "lo": 1.014,
+        "hi": 1.041,
+        "p": 0.0
+      },
+      "mean_depth5": null,
+      "anesthesia_hours": {
+        "OR": 1.136,
+        "lo": 1.101,
+        "hi": 1.172,
+        "p": 0.0
+      },
+      "excess5_10": null
+    },
+    {
+      "step": "+ mean depth",
+      "n": 21850,
+      "total_low10": {
+        "OR": 1.025,
+        "lo": 1.011,
+        "hi": 1.038,
+        "p": 0.0003
+      },
+      "mean_depth5": {
+        "OR": 1.102,
+        "lo": 1.013,
+        "hi": 1.199,
+        "p": 0.0242
+      },
+      "anesthesia_hours": {
+        "OR": 1.141,
+        "lo": 1.106,
+        "hi": 1.177,
+        "p": 0.0
+      },
+      "excess5_10": null
+    },
+    {
+      "step": "+ episode-pattern term",
+      "n": 21850,
+      "total_low10": {
+        "OR": 1.027,
+        "lo": 0.974,
+        "hi": 1.083,
+        "p": 0.3274
+      },
+      "mean_depth5": {
+        "OR": 1.102,
+        "lo": 1.013,
+        "hi": 1.199,
+        "p": 0.0243
+      },
+      "anesthesia_hours": {
+        "OR": 1.14,
+        "lo": 1.103,
+        "hi": 1.179,
+        "p": 0.0
+      },
+      "excess5_10": {
+        "OR": 0.997,
+        "lo": 0.934,
+        "hi": 1.065,
+        "p": 0.9378
+      }
+    }
+  ],
+  "pattern_per10": {
+    "OR": 0.997,
+    "lo": 0.934,
+    "hi": 1.065,
+    "p": 0.9378
+  },
+  "pattern_15min_scenario": {
+    "OR": 0.996,
+    "lo": 0.903,
+    "hi": 1.099,
+    "p": 0.9378
+  },
+  "pattern_lr": {
+    "stat": 0.006,
+    "df": 1,
+    "p": 0.937
+  },
+  "n": 21850,
+  "events": 1173,
+  "corr_total_vs_excess5": 0.966
+}
